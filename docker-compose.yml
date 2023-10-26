@@ -17,6 +17,12 @@ services:
       - "3000:3000"
     depends_on:
       - db
+      - selenium
+
+  selenium:
+    image: seleniarm/standalone-chromium
+    ports:
+      - "7900:7900"
 
 volumes:
   db-data: {}
