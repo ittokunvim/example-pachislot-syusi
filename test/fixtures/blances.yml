@@ -4,3 +4,26 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
+one:
+ date: <%= Date.parse("2023-01-01") %>,
+ category: スロット,
+ name: パチスロ甲鉄城のカバネリ,
+ investment_money: 10000,
+ recovery_money: 12000,
+ investment_saving: 460,
+ recovery_saving: 520,
+ rate: 4.6,
+ store: スーパーコスモプレミアム東京店,
+ note: 特になし,
+
+two:
+ date: <%= Date.parse("2023-06-06") %>,
+ category: パチンコ,
+ name: 新世紀エヴァンゲリオン〜未来への咆哮,
+ investment_money: 25000,
+ recovery_money: 10000,
+ investment_saving: 2000,
+ recovery_saving: 10000,
+ rate: 4.0,
+ store: マルハン東京店,
+ note: よく出たなー,
