@@ -87,4 +87,37 @@ class BlanceTest < ActiveSupport::TestCase
     @blance.note = "a" * 1001
     assert_not @blance.valid?
   end
+
+  test "caluculate_blance should be correct (rate: 4.0)" do
+    blance = Blance.new(
+      investment_money: 24000,
+      recovery_money: 30000,
+      investment_saving: 2500,
+      recovery_saving: 4000,
+      rate: 4.0,
+    )
+    assert_equal 12000, blance.caluculate_blance
+  end
+
+  test "caluculate_blance should be correct (rate: 21.73)" do
+    blance = Blance.new(
+      investment_money: 10000,
+      recovery_money: 20000,
+      investment_saving: 460,
+      recovery_saving: 920,
+      rate: 21.73,
+    )
+    assert_equal 19996, blance.caluculate_blance
+  end
+
+  test "caluculate_blance should be return 0" do
+    blance = Blance.new(
+      investment_money: nil,
+      recovery_money: nil,
+      investment_saving: nil,
+      recovery_saving: nil,
+      rate: nil,
+    )
+    assert_equal 0, blance.caluculate_blance
+  end
 end

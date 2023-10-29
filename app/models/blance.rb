@@ -17,4 +17,14 @@ class Blance < ApplicationRecord
     validates :investment_saving
     validates :recovery_saving
   end
+
+  def caluculate_blance
+    investment_money = self.investment_money.to_i
+    recovery_money = self.recovery_money.to_i
+    rate = self.rate.to_f
+    investment_saving = self.investment_saving.to_i * rate
+    recovery_saving = self.recovery_saving.to_i * rate
+    result = recovery_money - investment_money + recovery_saving - investment_saving
+    return result.round
+  end
 end
