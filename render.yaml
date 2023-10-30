@@ -9,6 +9,8 @@ services:
     runtime: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
+    domains:
+      - pachislot.ittokunvim.net
     envVars:
       - key: DATABASE_URL
         fromDatabase:
