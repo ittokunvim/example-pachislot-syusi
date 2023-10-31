@@ -1,22 +1,23 @@
 class BlancesController < ApplicationController
   def index
-  end
-
-  def new
-  end
-
-  def create
+    @blances = Blance.all
   end
 
   def show
+    @blance = Blance.find(params[:id])
+  end
+
+  def new
+    @blance = Blance.new
   end
 
   def edit
+    @blance = Blance.find(params[:id])
   end
 
-  def update
-  end
+  def create; end
 
-  def destroy
-  end
+  def update; end
+
+  def destroy; end
 end
