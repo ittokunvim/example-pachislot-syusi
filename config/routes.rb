@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   root "hello#index"
 
   get "/hello", to: "hello#index"
+
+  get "/syusi/list", to: "blances#index", as: "blance_list"
+  resources :blances, path: "/syusi", except: [:index]
 end
