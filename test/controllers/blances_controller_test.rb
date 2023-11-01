@@ -3,6 +3,10 @@ require "test_helper"
 class BlancesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @blance = blances(:one)
+    @blance_hash = @blance.attributes
+    @blance_hash.delete("id")
+    @blance_hash.delete("created_at")
+    @blance_hash.delete("updated_at")
     @page_title = "パチスロ収支アプリ | "
   end
 
@@ -31,17 +35,39 @@ class BlancesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should post create" do
-    post blances_url
-    assert_response :success
+    assert_difference("Blance.count", 1) do
+      post blances_url, params: { blance: @blance_hash }
+    end
+    assert_redirected_to blance_url Blance.last
+  end
+
+  test "should return bad_request when post create" do
+    @blance_hash["date"] = nil
+    assert_no_difference("Blance.count") do
+      post blances_url, params: { blance: @blance_hash }
+    end
+    assert_response :bad_request
   end
 
   test "should patch update" do
-    patch blance_url @blance
-    assert_response :success
+    assert_changes -> { @blance.updated_at } do
+      patch blance_url @blance, params: { blance: @blance_hash }
+    end
+    assert_redirected_to blance_url @blance
+  end
+
+  test "should return bad_request when patch update" do
+    @blance_hash["date"] = nil
+    assert_no_changes -> { @blance.updated_at } do
+      patch blance_url @blance, params: { blance: @blance_hash }
+    end
+    assert_response :bad_request
   end
 
   test "should delete destroy" do
-    delete blance_url @blance
-    assert_response :success
+    assert_difference("Blance.count", -1) do
+      delete blance_url @blance
+    end
+    assert_redirected_to blance_list_url
   end
 end
