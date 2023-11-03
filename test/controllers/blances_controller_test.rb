@@ -50,15 +50,17 @@ class BlancesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should patch update" do
-    assert_changes -> { @blance.updated_at } do
+    @blance_hash["name"] = "test"
+    assert_changes -> { @blance.name } do
       patch blance_url @blance, params: { blance: @blance_hash }
+      @blance.reload
     end
     assert_redirected_to blance_url @blance
   end
 
   test "should return bad_request when patch update" do
-    @blance_hash["date"] = nil
-    assert_no_changes -> { @blance.updated_at } do
+    @blance_hash["category"] = "a" * 101
+    assert_no_changes -> { @blance.category } do
       patch blance_url @blance, params: { blance: @blance_hash }
     end
     assert_response :bad_request
