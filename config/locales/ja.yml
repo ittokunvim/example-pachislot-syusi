@@ -1,5 +1,17 @@
 ja:
   defaults:
+  blances:
+    edit:
+      title: "%{date}の収支編集"
+    index:
+      title: "収支一覧"
+    new:
+      title: "収支作成"
+    show:
+      title: "%{date}の収支"
   hello:
     index:
       title: "やっはろー"
+  date:
+    formats:
+      default: ! "%Y年%m月%d日"
