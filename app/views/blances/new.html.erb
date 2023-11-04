@@ -1,5 +1,6 @@
 <%# REQUIRE: @blance %>
 
 <% content_for(:title, t(".title")) %>
+<% provide(:button_text, t(".button_text")) %>
 
-<p>app/views/blances/new.html.erb</p>
+<%= render "form" %>
