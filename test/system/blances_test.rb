@@ -59,7 +59,7 @@ class BlancesTest < ApplicationSystemTestCase
     fill_in I18n.t("activerecord.attributes.blance.note"), with: @blance.note
     click_on I18n.t("blances.new.button_text")
     # check redirect
-    assert_selector "div#notice"
+    assert_selector "div#notice", text: I18n.t("blances.create.notice")
     assert_text blance_name
   end
 
@@ -75,7 +75,7 @@ class BlancesTest < ApplicationSystemTestCase
     fill_in I18n.t("activerecord.attributes.blance.name"), with: blance_name
     click_on I18n.t("blances.edit.button_text")
     # check redirect
-    assert_selector "div#notice"
+    assert_selector "div#notice", text: I18n.t("blances.update.notice")
     assert_text blance_name
    end
 
@@ -85,7 +85,7 @@ class BlancesTest < ApplicationSystemTestCase
     click_on I18n.t("blances.edit.delete")
     assert_match page.driver.browser.switch_to.alert.text, I18n.t("blances.edit.confirm")
     page.driver.browser.switch_to.alert.accept
-    assert_selector "div#notice"
+    assert_selector "div#notice", text: I18n.t("blances.destroy.notice")
     assert_no_text @blance.name
   end
 end

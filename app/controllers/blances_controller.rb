@@ -27,7 +27,7 @@ class BlancesController < ApplicationController
   def update
     @blance = Blance.find(params[:id])
     if @blance.update(blance_params)
-      redirect_to @blance, notice: t("notice")
+      redirect_to @blance, notice: t(".notice")
     else
       render("edit", status: :bad_request)
     end
@@ -36,7 +36,7 @@ class BlancesController < ApplicationController
   def destroy
     @blance = Blance.find(params[:id])
     @blance.destroy
-    redirect_to blance_list_url, notice: t("notice")
+    redirect_to blance_list_url, notice: t(".notice")
   end
 
   private
