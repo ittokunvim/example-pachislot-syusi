@@ -83,6 +83,8 @@ class BlancesTest < ApplicationSystemTestCase
     visit edit_blance_url(@blance)
 
     click_on I18n.t("blances.edit.delete")
+    assert_match page.driver.browser.switch_to.alert.text, I18n.t("blances.edit.confirm")
+    page.driver.browser.switch_to.alert.accept
     assert_selector "div#notice"
     assert_no_text @blance.name
   end

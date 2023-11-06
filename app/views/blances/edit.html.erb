@@ -4,3 +4,5 @@
 <% provide(:button_text, t(".button_text")) %>
 
 <%= render "form" %>
+
+<%= link_to t(".delete"), @blance, data: { turbo_method: :delete, turbo_confirm: t(".confirm") } %>

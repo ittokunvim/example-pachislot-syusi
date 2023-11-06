@@ -1,4 +1,6 @@
 <%= form_with(model: @blance, local: true) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
   <div>
     <%= f.label :date %>
     <%= f.date_field :date %>
@@ -33,6 +35,10 @@
       [["4パチ(4.0)", 4.0], ["1パチ(1.0)", 1.0], ["20スロ(21.73)", 21.73], ["5スロ(5.43)", 5.43]],
       { include_blank: true }
     %>
+  </div>
+  <div>
+    <%= f.label :store %>
+    <%= f.text_field :store %>
   </div>
   <div>
     <%= f.label :note %>

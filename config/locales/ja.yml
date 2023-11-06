@@ -1,9 +1,12 @@
 ja:
   defaults:
+    ago: "%{time}前"
   blances:
     edit:
       title: "%{date}の収支編集"
       button_text: "収支を編集"
+      delete: "収支を削除"
+      confirm: "本当に収支を削除してよろしいでしょうか？"
     index:
       title: "収支一覧"
     new:
@@ -11,6 +14,12 @@ ja:
       button_text: "収支を作成"
     show:
       title: "%{date}の収支"
+    create:
+      notice: "収支を作成しました"
+    update:
+      notice: "収支を更新しました"
+    destroy:
+      notice: "収支を削除しました"
   hello:
     index:
       title: "やっはろー"
@@ -28,6 +37,7 @@ ja:
         investment_saving: "引出数"
         recovery_saving: "貯玉数"
         rate: "交換率"
+        store: "店舗名"
         note: "備考"
         result: "結果"
 

@@ -40,11 +40,23 @@
     <td><%= @blance.rate %></td>
   </tr>
   <tr>
+    <th><%= Blance.human_attribute_name(:store) %></th>
+    <td><%= @blance.store %></td>
+  </tr>
+  <tr>
     <th><%= Blance.human_attribute_name(:note) %></th>
     <td><%= @blance.note %></td>
   </tr>
   <tr>
     <th><%= Blance.human_attribute_name(:result) %></th>
     <td><%= @blance.caluculate_blance %></td>
+  </tr>
+  <tr>
+    <th><%= Blance.human_attribute_name(:created_at) %></th>
+    <td><%= t("defaults.ago", time: time_ago_in_words(@blance.created_at)) %></td>
+  </tr>
+  <tr>
+    <th><%= Blance.human_attribute_name(:updated_at) %></th>
+    <td><%= t("defaults.ago", time: time_ago_in_words(@blance.updated_at)) %></td>
   </tr>
 </table>
