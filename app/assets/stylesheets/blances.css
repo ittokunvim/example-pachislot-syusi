@@ -98,3 +98,74 @@
 	display: inline-block;
 	padding: 0.5em;
 }
+
+/*
+ * form
+ */
+.blances__form {
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.blances__form form {
+	padding: 1em;
+	border: 1px solid lightgray;
+	border-radius: 0.5em;
+}
+
+.blances__form .form_group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.2em;
+	margin-bottom: 1em;
+}
+
+.blances__form .form_group label {
+	font-size: 0.8rem;
+}
+
+.blances__form .form_group input,
+.blances__form .form_group select,
+.blances__form .form_group textarea {
+	font-size: 1rem;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.5em;
+	border: 1px solid black;
+	border-radius: 0.2em;
+	letter-spacing: 1px;
+	word-spacing: 2px;
+	background-color: white;
+	color: black;
+}
+
+.blances__form .form_group textarea {
+	height: 10em;
+}
+
+.blances__form input[type="submit"] {
+	cursor: pointer;
+	font-size: 0.8rem;
+	font-weight: bold;
+	padding: 0.5em 1em;
+	border: 1px solid black;
+	border-radius: 0.5em;
+	background-color: limegreen;
+	color: white;
+}
+
+.blances__form .field_with_errors input,
+.blances__form .field_with_errors select,
+.blances__form .field_with_errors textarea {
+	border: 1px solid red;
+}
+
+@media screen and (min-width: 600px) {
+	.blances__form .form_group input,
+	.blances__form input[type="submit"],
+	.blances__form .form_group select,
+	.blances__form .form_group textarea {
+		font-size: 0.8rem;
+	}
+}

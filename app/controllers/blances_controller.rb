@@ -47,10 +47,11 @@ class BlancesController < ApplicationController
       :category,
       :name,
       :investment_money,
-      :recover_money,
+      :recovery_money,
       :investment_saving,
       :recovery_saving,
       :rate,
+      :store,
       :note
     )
   end

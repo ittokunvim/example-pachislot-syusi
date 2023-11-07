@@ -13,3 +13,15 @@
  * require_tree .
  * require_self
  */
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"] {
+    appearance: none;
+    height: 2em;
+}
+
+input[type="date"]::-webkit-date-and-time-value,
+input[type="time"]::-webkit-date-and-time-value {
+    text-align: left;
+}
