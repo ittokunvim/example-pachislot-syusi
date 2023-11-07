@@ -1,0 +1,47 @@
+.blances__list {
+	font-size: 0.8rem;
+	overflow-x: auto;
+}
+
+.blances__list table {
+	width: max-content;
+	border-collapse: collapse;
+}
+
+.blances__list th,
+.blances__list td {
+	min-width: 80px;
+	max-width: 200px;
+	padding: 0.5em;
+	border: 1px solid #ddd;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.blances__list td:last-child {
+	padding: 0;
+}
+
+.blances__list td:last-child ul {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+	line-height: 2;
+}
+
+.blances__list td:last-child ul a {
+	color: dodgerblue;
+	text-decoration: none;
+	padding: 0.25em 0.5em;
+}
+
+.blances__list td:last-child ul a:hover {
+	text-decoration: underline;
+}
+
+.blances__list td:last-child ul a:nth-child(even) {
+	background-color: #eee;
+	border-top: 1px solid #ddd;
+}

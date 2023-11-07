@@ -10,6 +10,7 @@ class BlancesTest < ApplicationSystemTestCase
 
     Blance.all.each do |blance|
       blance.attributes.each do |k, v|
+        next if k == "id" || k == "note"
         assert_selector "th", text: Blance.human_attribute_name(k)
         case k
         when "date"
@@ -20,6 +21,9 @@ class BlancesTest < ApplicationSystemTestCase
           assert_selector "td", text: v
         end
       end
+      assert_text I18n.t("blances.index.operation")
+      assert_link I18n.t("blances.index.show"), href: blance_path(blance)
+      assert_link I18n.t("blances.index.edit"), href: edit_blance_path(blance)
     end
   end
 
@@ -77,7 +81,7 @@ class BlancesTest < ApplicationSystemTestCase
     # check redirect
     assert_selector "div#notice", text: I18n.t("blances.update.notice")
     assert_text blance_name
-   end
+  end
 
   test "destroying a Blance" do
     visit edit_blance_url(@blance)
