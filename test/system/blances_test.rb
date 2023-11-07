@@ -31,16 +31,25 @@ class BlancesTest < ApplicationSystemTestCase
     visit blance_url(@blance)
 
     @blance.attributes.each do |k, v|
-      assert_selector "th", text: Blance.human_attribute_name(k)
+      next if k == "id"
       case k
       when "date"
+        assert_selector "th", text: Blance.human_attribute_name(k)
         assert_selector "td", text: I18n.l(v)
       when "created_at", "updated_at"
-        assert_selector "td", text: time_ago_in_words(v)
+        assert_selector "caption", text: I18n.l(v, format: :long)
       else
+        assert_selector "th", text: Blance.human_attribute_name(k)
         assert_selector "td", text: v
       end
     end
+    assert_text I18n.t("blances.show.date")
+    assert_text I18n.t("blances.show.blance")
+    assert_text I18n.t("blances.show.machine")
+    assert_text I18n.t("blances.show.store")
+    assert_text I18n.t("blances.show.etc")
+    assert_text I18n.t("blances.show.operation")
+    assert_link I18n.t("blances.show.edit"), href: edit_blance_path(@blance)
   end
 
   test "creating a Blance" do

@@ -1,3 +1,6 @@
+/*
+ * index
+ */
 .blances__list {
 	font-size: 0.8rem;
 	overflow-x: auto;
@@ -44,4 +47,54 @@
 .blances__list td:last-child ul a:nth-child(even) {
 	background-color: #eee;
 	border-top: 1px solid #ddd;
+}
+
+/*
+ * show
+ */
+
+/* .blances__show {} */
+
+.blances__show table {
+	font-size: 0.9rem;
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+	border: 1px solid #ddd;
+	border-collapse: collapse;
+}
+
+.blances__show th,
+.blances__show td {
+	min-width: 80px;
+	max-width: 200px;
+	padding: 0.5em;
+    vertical-align: top;
+}
+
+.blances__show th {
+	color: gray;
+}
+
+.blances__show td:last-child {
+    word-wrap: break-word;
+	white-space: pre-wrap;
+}
+
+.blances__show .headline {
+	color: black;
+	background-color: #eee;
+	text-align: left;
+}
+
+.blances__show caption {
+	font-size: 0.8rem;
+	color: gray;
+	caption-side: bottom;
+	text-align: right;
+}
+
+.blances__show caption div {
+	display: inline-block;
+	padding: 0.5em;
 }

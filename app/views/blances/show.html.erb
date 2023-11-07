@@ -2,61 +2,78 @@
 
 <% content_for(:title, t(".title", date: l(@blance.date))) %>
 
-<table>
-  <tr>
-    <th><%= Blance.human_attribute_name(:id) %></th>
-    <td><%= @blance.id %></td>
-  </tr>
-  <tr>
-    <th><%= Blance.human_attribute_name(:date) %></th>
-    <td><%= l(@blance.date) %></td>
-  </tr>
-  <tr>
-    <th><%= Blance.human_attribute_name(:category) %></th>
-    <td><%= @blance.category %></td>
-  </tr>
-  <tr>
-    <th><%= Blance.human_attribute_name(:name) %></th>
-    <td><%= @blance.name %></td>
-  </tr>
-  <tr>
-    <th><%= Blance.human_attribute_name(:investment_money) %></th>
-    <td><%= @blance.investment_money %></td>
-  </tr>
-  <tr>
-    <th><%= Blance.human_attribute_name(:recovery_money) %></th>
-    <td><%= @blance.recovery_money %></td>
-  </tr>
-  <tr>
-    <th><%= Blance.human_attribute_name(:investment_saving) %></th>
-    <td><%= @blance.investment_saving %></td>
-  </tr>
-  <tr>
-    <th><%= Blance.human_attribute_name(:recovery_saving) %></th>
-    <td><%= @blance.recovery_saving %></td>
-  </tr>
-  <tr>
-    <th><%= Blance.human_attribute_name(:rate) %></th>
-    <td><%= @blance.rate %></td>
-  </tr>
-  <tr>
-    <th><%= Blance.human_attribute_name(:store) %></th>
-    <td><%= @blance.store %></td>
-  </tr>
-  <tr>
-    <th><%= Blance.human_attribute_name(:note) %></th>
-    <td><%= @blance.note %></td>
-  </tr>
-  <tr>
-    <th><%= Blance.human_attribute_name(:result) %></th>
-    <td><%= @blance.caluculate_blance %></td>
-  </tr>
-  <tr>
-    <th><%= Blance.human_attribute_name(:created_at) %></th>
-    <td><%= t("defaults.ago", time: time_ago_in_words(@blance.created_at)) %></td>
-  </tr>
-  <tr>
-    <th><%= Blance.human_attribute_name(:updated_at) %></th>
-    <td><%= t("defaults.ago", time: time_ago_in_words(@blance.updated_at)) %></td>
-  </tr>
-</table>
+<div class="blances__show">
+  <table>
+    <tr>
+      <th colspan="2" class="headline"><%= t(".date") %></th>
+    </tr>
+    <tr>
+      <th><%= Blance.human_attribute_name(:date) %></th>
+      <td><%= l(@blance.date) %></td>
+    </tr>
+    <tr>
+      <th colspan="2" class="headline"><%= t(".blance") %></th>
+    </tr>
+    <tr>
+      <th><%= Blance.human_attribute_name(:investment_money) %></th>
+      <td><%= @blance.investment_money %></td>
+    </tr>
+    <tr>
+      <th><%= Blance.human_attribute_name(:recovery_money) %></th>
+      <td><%= @blance.recovery_money %></td>
+    </tr>
+    <tr>
+      <th><%= Blance.human_attribute_name(:investment_saving) %></th>
+      <td><%= @blance.investment_saving %></td>
+    </tr>
+    <tr>
+      <th><%= Blance.human_attribute_name(:recovery_saving) %></th>
+      <td><%= @blance.recovery_saving %></td>
+    </tr>
+    <tr>
+      <th><%= Blance.human_attribute_name(:rate) %></th>
+      <td><%= @blance.rate %></td>
+    </tr>
+    <tr>
+      <th><%= Blance.human_attribute_name(:result) %></th>
+      <td><%= @blance.caluculate_blance %></td>
+    </tr>
+    <tr>
+      <th colspan="2" class="headline"><%= t(".machine") %></th>
+    </tr>
+    <tr>
+      <th><%= Blance.human_attribute_name(:category) %></th>
+      <td><%= @blance.category %></td>
+    </tr>
+    <tr>
+      <th><%= Blance.human_attribute_name(:name) %></th>
+      <td><%= @blance.name %></td>
+    </tr>
+    <tr>
+      <th colspan="2" class="headline"><%= t(".store") %></th>
+    </tr>
+    <tr>
+      <th><%= Blance.human_attribute_name(:store) %></th>
+      <td><%= @blance.store %></td>
+    </tr>
+    <tr>
+      <th colspan="2" class="headline"><%= t(".etc") %></th>
+    </tr>
+    <tr>
+      <th><%= t(".operation") %></th>
+      <td><%= link_to t(".edit"), edit_blance_path(@blance) %></td>
+    </tr>
+    <tr>
+      <th><%= Blance.human_attribute_name(:note) %></th>
+      <td><%= @blance.note %></td>
+    </tr>
+    <caption>
+      <div>
+        <%= t("defaults.created", date: l(@blance.created_at, format: :long)) %>
+      </div>
+      <div> 
+        <%= t("defaults.updated", date: l(@blance.updated_at, format: :long)) %>
+      </div>
+    </caption>
+  </table>
+</div>
