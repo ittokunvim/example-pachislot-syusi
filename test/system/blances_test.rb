@@ -80,19 +80,18 @@ class BlancesTest < ApplicationSystemTestCase
   end
 
   test "updating a Blance" do
-    blance_name = "test_blance"
     visit edit_blance_url(@blance)
 
     # invalid input
-    fill_in I18n.t("activerecord.attributes.blance.name"), with: "a" * 1001
+    fill_in I18n.t("activerecord.attributes.blance.date"), with: ""
     click_on I18n.t("blances.edit.button_text")
     assert_selector "div#error_explanation"
     # valid input
-    fill_in I18n.t("activerecord.attributes.blance.name"), with: blance_name
+    fill_in I18n.t("activerecord.attributes.blance.date"), with: Date.today
     click_on I18n.t("blances.edit.button_text")
     # check redirect
     assert_selector "div#notice", text: I18n.t("blances.update.notice")
-    assert_text blance_name
+    assert_text I18n.l(Date.today)
   end
 
   test "destroying a Blance" do

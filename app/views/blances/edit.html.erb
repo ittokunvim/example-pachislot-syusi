@@ -1,6 +1,6 @@
 <%# REQUIRE: @blance %>
 
-<% content_for(:title, t(".title", date: l(@blance.date))) %>
+<% content_for(:title, t(".title", date: l(@blance.date || Date.today))) %>
 <% provide(:button_text, t(".button_text")) %>
 
 <div class="blances__edit">
