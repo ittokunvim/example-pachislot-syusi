@@ -8,9 +8,11 @@ class BlancesTest < ApplicationSystemTestCase
   test "visiting the index" do
     visit blance_list_url
 
-    Blance.all.each do |blance|
+    excepted_columns = %w[id note]
+    Blance.find_each do |blance|
       blance.attributes.each do |k, v|
-        next if k == "id" || k == "note"
+        next if excepted_columns.include?(k)
+
         assert_selector "th", text: Blance.human_attribute_name(k)
         case k
         when "date"
@@ -32,6 +34,7 @@ class BlancesTest < ApplicationSystemTestCase
 
     @blance.attributes.each do |k, v|
       next if k == "id"
+
       case k
       when "date"
         assert_selector "th", text: Blance.human_attribute_name(k)
