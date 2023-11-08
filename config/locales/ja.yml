@@ -7,8 +7,6 @@ ja:
     edit:
       title: "%{date}の収支編集"
       button_text: "収支を編集"
-      delete: "収支を削除"
-      confirm: "本当に収支を削除してよろしいでしょうか？"
     index:
       title: "収支一覧"
       operation: "操作"
