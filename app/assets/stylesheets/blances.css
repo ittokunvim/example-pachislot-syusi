@@ -87,16 +87,61 @@
 	text-align: left;
 }
 
-.blances__show caption {
+.blances__show .datetimes {
 	font-size: 0.8rem;
 	color: gray;
-	caption-side: bottom;
-	text-align: right;
 }
 
-.blances__show caption div {
+.blances__show .datetimes ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	gap: 1em;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.blances__show .links {
+	font-size: 0.9rem;
 	display: inline-block;
-	padding: 0.5em;
+	border: 1px solid #ddd;
+	border-radius: 0.5em;
+}
+
+.blances__show .links ul {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+}
+
+.blances__show .links ul a {
+	display: block;
+	padding: 0.5em 1em;
+	text-decoration: none;
+	color: black;
+	transition: all 0.2s ease-out;
+}
+
+.blances__show .links ul a:first-child {
+	border-top-left-radius: 0.5em;
+	border-top-right-radius: 0.5em;
+}
+
+.blances__show .links ul a:last-child {
+	border-bottom-left-radius: 0.5em;
+	border-bottom-right-radius: 0.5em;
+}
+
+.blances__show .links ul a.edit:hover {
+	color: white;
+	background-color: limegreen;
+}
+
+.blances__show .links ul a.delete:hover {
+	color: white;
+	background-color: orangered;
 }
 
 /*

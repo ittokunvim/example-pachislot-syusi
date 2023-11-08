@@ -24,6 +24,8 @@ ja:
       etc: "その他"
       operation: "操作"
       edit: "編集する"
+      delete: "削除する"
+      confirm: "本当に収支を削除してよろしいでしょうか？"
     create:
       notice: "収支を作成しました"
     update:

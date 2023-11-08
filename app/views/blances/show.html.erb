@@ -60,20 +60,20 @@
       <th colspan="2" class="headline"><%= t(".etc") %></th>
     </tr>
     <tr>
-      <th><%= t(".operation") %></th>
-      <td><%= link_to t(".edit"), edit_blance_path(@blance) %></td>
-    </tr>
-    <tr>
       <th><%= Blance.human_attribute_name(:note) %></th>
       <td><%= @blance.note %></td>
     </tr>
-    <caption>
-      <div>
-        <%= t("defaults.created", date: l(@blance.created_at, format: :long)) %>
-      </div>
-      <div> 
-        <%= t("defaults.updated", date: l(@blance.updated_at, format: :long)) %>
-      </div>
-    </caption>
   </table>
+  <div class="datetimes">
+    <ul>
+      <li><%= t("defaults.created", date: l(@blance.created_at, format: :long)) %></li>
+      <li><%= t("defaults.updated", date: l(@blance.updated_at, format: :long)) %></li>
+    </ul>
+  </div>
+  <div class="links">
+    <ul>
+      <%= link_to t(".edit"), edit_blance_path(@blance), class: "edit" %>
+      <%= link_to t(".delete"), @blance, data: { turbo_method: :delete, turbo_confirm: t(".confirm") }, class: "delete" %>
+    </ul>
+  </div>
 </div>

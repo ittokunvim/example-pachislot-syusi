@@ -37,7 +37,7 @@ class BlancesTest < ApplicationSystemTestCase
         assert_selector "th", text: Blance.human_attribute_name(k)
         assert_selector "td", text: I18n.l(v)
       when "created_at", "updated_at"
-        assert_selector "caption", text: I18n.l(v, format: :long)
+        assert_text I18n.l(v, format: :long)
       else
         assert_selector "th", text: Blance.human_attribute_name(k)
         assert_selector "td", text: v
@@ -48,8 +48,8 @@ class BlancesTest < ApplicationSystemTestCase
     assert_text I18n.t("blances.show.machine")
     assert_text I18n.t("blances.show.store")
     assert_text I18n.t("blances.show.etc")
-    assert_text I18n.t("blances.show.operation")
     assert_link I18n.t("blances.show.edit"), href: edit_blance_path(@blance)
+    assert_link I18n.t("blances.show.delete"), href: blance_path(@blance)
   end
 
   test "creating a Blance" do
@@ -93,10 +93,10 @@ class BlancesTest < ApplicationSystemTestCase
   end
 
   test "destroying a Blance" do
-    visit edit_blance_url(@blance)
+    visit blance_url(@blance)
 
-    click_on I18n.t("blances.edit.delete")
-    assert_match page.driver.browser.switch_to.alert.text, I18n.t("blances.edit.confirm")
+    click_on I18n.t("blances.show.delete")
+    assert_match page.driver.browser.switch_to.alert.text, I18n.t("blances.show.confirm")
     page.driver.browser.switch_to.alert.accept
     assert_selector "div#notice", text: I18n.t("blances.destroy.notice")
     assert_no_text @blance.name
