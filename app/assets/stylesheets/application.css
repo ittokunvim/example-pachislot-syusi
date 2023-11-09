@@ -14,14 +14,63 @@
  * require_self
  */
 
+body {
+	margin: 0;
+	padding: 0;
+}
+
 input[type="date"],
 input[type="time"],
 input[type="datetime-local"] {
-    appearance: none;
-    height: 2em;
+	appearance: none;
+	height: 2em;
 }
 
 input[type="date"]::-webkit-date-and-time-value,
 input[type="time"]::-webkit-date-and-time-value {
-    text-align: left;
+	text-align: left;
+}
+
+#flash_notice {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1rem;
+	padding: 1rem;
+	border-left: 4px solid dodgerblue;
+	background-color: lightblue;
+	color: dodgerblue;
+	text-align: center;
+}
+
+#flash_notice button {
+	cursor: pointer;
+	position: relative;
+	width: 24px;
+	height: 24px;
+	margin: 0;
+	padding: 0;
+	border: none;
+	color: dodgerblue;
+	background-color: inherit;
+}
+
+#flash_notice button::before,
+#flash_notice button::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 3px;
+	height: 18px;
+	background-color: dodgerblue;
+}
+
+#flash_notice button::before {
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#flash_notice button::after {
+	transform: translate(-50%, -50%) rotate(-45deg);
 }

@@ -1,3 +1,6 @@
 <% flash.each do |key, value| %>
-  <%= content_tag(:div, value, id: "notice") %>
+  <div id="flash_<%= key %>" data-controller="shared" data-target="shared.notice">
+    <%= content_tag(:span, value) %>
+    <button data-action="click->shared#delete">x</button>
+  </div>
 <% end %>
