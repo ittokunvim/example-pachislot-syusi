@@ -44,7 +44,39 @@ input[type="time"]::-webkit-date-and-time-value {
 	text-align: center;
 }
 
-#flash_notice button {
+#flash_notice .batu-btn::before,
+#flash_notice .batu-btn::after {
+	background-color: dodgerblue;
+}
+
+#error_explanation {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	font-size: 0.9rem;
+	letter-spacing: 1px;
+	word-spacing: 2px;
+	background: pink;
+	color: crimson;
+	padding: 1rem;
+	border: 1px solid crimson;
+	border-radius: 0.5em;
+}
+
+#error_explanation ul {
+	margin: 0;
+	padding-left: 1em;
+	list-style: circle;
+	line-height: 2;
+}
+
+#error_explanation .batu-btn::before,
+#error_explanation .batu-btn::after {
+	background-color: crimson;
+}
+
+.batu-btn {
 	cursor: pointer;
 	position: relative;
 	width: 24px;
@@ -52,12 +84,11 @@ input[type="time"]::-webkit-date-and-time-value {
 	margin: 0;
 	padding: 0;
 	border: none;
-	color: dodgerblue;
 	background-color: inherit;
 }
 
-#flash_notice button::before,
-#flash_notice button::after {
+.batu-btn::before,
+.batu-btn::after {
 	content: "";
 	position: absolute;
 	top: 50%;
@@ -67,10 +98,10 @@ input[type="time"]::-webkit-date-and-time-value {
 	background-color: dodgerblue;
 }
 
-#flash_notice button::before {
+.batu-btn::before {
 	transform: translate(-50%, -50%) rotate(45deg);
 }
 
-#flash_notice button::after {
+.batu-btn::after {
 	transform: translate(-50%, -50%) rotate(-45deg);
 }

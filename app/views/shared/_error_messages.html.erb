@@ -1,9 +1,10 @@
 <% if object.errors.any? %>
-  <div id="error_explanation">
+  <div id="error_explanation" data-controller="shared" data-target="shared.field">
     <ul>
       <% object.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
     </ul>
+    <button type="button" data-action="click->shared#delete" class="batu-btn"></button>
   </div>
 <% end %>
