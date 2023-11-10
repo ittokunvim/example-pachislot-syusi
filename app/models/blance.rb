@@ -25,6 +25,6 @@ class Blance < ApplicationRecord
     investment_saving = self.investment_saving.to_i * rate
     recovery_saving = self.recovery_saving.to_i * rate
     result = recovery_money - investment_money + recovery_saving - investment_saving
-    return result.round
+    result.round
   end
 end

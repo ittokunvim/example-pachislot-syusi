@@ -11,7 +11,7 @@ class BlancesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get blance_list_url
+    get blances_url
     assert_response :success
     assert_select "title", @page_title + I18n.t("blances.index.title")
   end
@@ -70,6 +70,6 @@ class BlancesControllerTest < ActionDispatch::IntegrationTest
     assert_difference("Blance.count", -1) do
       delete blance_url @blance
     end
-    assert_redirected_to blance_list_url
+    assert_redirected_to blances_url
   end
 end

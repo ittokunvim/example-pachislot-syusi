@@ -10,6 +10,98 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+ * require_tree .
+ * require_self
  */
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"] {
+	appearance: none;
+	height: 2em;
+}
+
+input[type="date"]::-webkit-date-and-time-value,
+input[type="time"]::-webkit-date-and-time-value {
+	text-align: left;
+}
+
+#flash_notice {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1rem;
+	padding: 1rem;
+	border-left: 4px solid dodgerblue;
+	background-color: lightblue;
+	color: dodgerblue;
+	text-align: center;
+}
+
+#flash_notice .batu-btn::before,
+#flash_notice .batu-btn::after {
+	background-color: dodgerblue;
+}
+
+#error_explanation {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	font-size: 0.9rem;
+	letter-spacing: 1px;
+	word-spacing: 2px;
+	background: pink;
+	color: crimson;
+	padding: 1rem;
+	border: 1px solid crimson;
+	border-radius: 0.5em;
+}
+
+#error_explanation ul {
+	margin: 0;
+	padding-left: 1em;
+	list-style: circle;
+	line-height: 2;
+}
+
+#error_explanation .batu-btn::before,
+#error_explanation .batu-btn::after {
+	background-color: crimson;
+}
+
+.batu-btn {
+	cursor: pointer;
+	position: relative;
+	width: 24px;
+	height: 24px;
+	margin: 0;
+	padding: 0;
+	border: none;
+	background-color: inherit;
+}
+
+.batu-btn::before,
+.batu-btn::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 3px;
+	height: 18px;
+	background-color: dodgerblue;
+}
+
+.batu-btn::before {
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.batu-btn::after {
+	transform: translate(-50%, -50%) rotate(-45deg);
+}

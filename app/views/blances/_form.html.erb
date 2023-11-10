@@ -1,0 +1,47 @@
+<div class="blances__form">
+  <%= form_with(model: @blance, local: true) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <div class="form_group">
+      <%= f.label :date %>
+      <%= f.date_field :date %>
+    </div>
+    <div class="form_group">
+      <%= f.label :category %>
+      <%= f.select :category, ["パチンコ", "スロット"], { include_blank: true } %>
+    </div>
+    <div class="form_group">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="form_group">
+      <%= f.label :investment_money %>
+      <%= f.number_field :investment_money %>
+    </div>
+    <div class="form_group">
+      <%= f.label :recovery_money %>
+      <%= f.number_field :recovery_money %>
+    </div>
+    <div class="form_group">
+      <%= f.label :investment_saving %>
+      <%= f.number_field :investment_saving %>
+    </div>
+    <div class="form_group">
+      <%= f.label :recovery_saving %>
+      <%= f.number_field :recovery_saving %>
+    </div>
+    <div class="form_group">
+      <%= f.label :rate %>
+      <%= f.select :rate, [["4パチ(4.0)", 4.0], ["1パチ(1.0)", 1.0], ["20スロ(21.73)", 21.73], ["5スロ(5.43)", 5.43]], { include_blank: true } %>
+    </div>
+    <div class="form_group">
+      <%= f.label :store %>
+      <%= f.text_field :store %>
+    </div>
+    <div class="form_group">
+      <%= f.label :note %>
+      <%= f.text_area :note %>
+    </div>
+    <%= f.submit yield(:button_text) %>
+  <% end %>
+</div>

@@ -1,5 +1,8 @@
 <%# REQUIRE: @blance %>
 
-<% content_for(:title, t(".title", date: l(@blance.date))) %>
+<% content_for(:title, t(".title", date: l(@blance.date || Date.today))) %>
+<% provide(:button_text, t(".button_text")) %>
 
-<p>app/views/blances/edit.html.erb</p>
+<div class="blances__edit">
+  <%= render "form" %>
+</div>

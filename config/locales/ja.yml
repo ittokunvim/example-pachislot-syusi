@@ -1,17 +1,64 @@
 ja:
   defaults:
+    ago: "%{time}前"
+    created: "%{date}に作成"
+    updated: "%{date}に更新"
+    back: "戻る"
   blances:
     edit:
       title: "%{date}の収支編集"
+      button_text: "収支を編集"
     index:
       title: "収支一覧"
+      operation: "操作"
+      show: "閲覧する"
+      edit: "編集する"
     new:
       title: "収支作成"
+      button_text: "収支を作成"
     show:
       title: "%{date}の収支"
+      date: "日付"
+      blance: "収支"
+      machine: "機種"
+      store: "店舗"
+      etc: "その他"
+      operation: "操作"
+      edit: "編集する"
+      delete: "削除する"
+      confirm: "本当に収支を削除してよろしいでしょうか？"
+    create:
+      notice: "収支を作成しました"
+    update:
+      notice: "収支を更新しました"
+    destroy:
+      notice: "収支を削除しました"
   hello:
     index:
       title: "やっはろー"
+
+  activerecord:
+    models:
+      blance: "収支"
+    attributes:
+      blance:
+        date: "日付"
+        category: "種別"
+        name: "機種名"
+        investment_money: "投資（現金）"
+        recovery_money: "回収（現金）"
+        investment_saving: "引出数（貯玉メダル）"
+        recovery_saving: "貯玉数（貯玉メダル）"
+        rate: "交換率"
+        store: "店舗名"
+        note: "備考"
+        result: "結果"
+
+  attributes:
+    id: "識別"
+    created_at: "作成日時"
+    updated_at: "更新日時"
+
   date:
     formats:
       default: ! "%Y年%m月%d日"
