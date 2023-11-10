@@ -53,13 +53,17 @@
  * show
  */
 
-/* .blances__show {} */
+.blances__show {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0.5rem;
+}
 
 .blances__show table {
 	font-size: 0.9rem;
 	width: 100%;
-	max-width: 800px;
-	margin: 0 auto;
 	border: 1px solid #ddd;
 	border-collapse: collapse;
 }
