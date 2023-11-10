@@ -36,7 +36,7 @@ class BlancesController < ApplicationController
   def destroy
     @blance = Blance.find(params[:id])
     @blance.destroy
-    redirect_to blance_list_url, notice: t(".notice")
+    redirect_to blances_url, notice: t(".notice")
   end
 
   private

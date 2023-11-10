@@ -6,7 +6,7 @@ class BlancesTest < ApplicationSystemTestCase
   end
 
   test "visiting the index" do
-    visit blance_list_url
+    visit blances_url
 
     excepted_columns = %w[id note]
     Blance.find_each do |blance|
@@ -53,7 +53,7 @@ class BlancesTest < ApplicationSystemTestCase
     assert_text I18n.t("blances.show.etc")
     assert_link I18n.t("blances.show.edit"), href: edit_blance_path(@blance)
     assert_link I18n.t("blances.show.delete"), href: blance_path(@blance)
-    assert_link I18n.t("defaults.back"), href: blance_list_path
+    assert_link I18n.t("defaults.back"), href: blances_path
   end
 
   test "creating a Blance" do
