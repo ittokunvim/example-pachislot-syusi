@@ -3,6 +3,7 @@ ja:
     ago: "%{time}前"
     created: "%{date}に作成"
     updated: "%{date}に更新"
+    back: "戻る"
   blances:
     edit:
       title: "%{date}の収支編集"

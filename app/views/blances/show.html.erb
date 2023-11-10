@@ -74,6 +74,7 @@
     <ul>
       <%= link_to t(".edit"), edit_blance_path(@blance), class: "edit" %>
       <%= link_to t(".delete"), @blance, data: { turbo_method: :delete, turbo_confirm: t(".confirm") }, class: "delete" %>
+      <%= link_to t("defaults.back"), blance_list_path, class: "back" %>
     </ul>
   </div>
 </div>

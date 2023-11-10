@@ -144,6 +144,11 @@
 	background-color: orangered;
 }
 
+.blances__show .links ul a.back:hover {
+	color: white;
+	background-color: gray;
+}
+
 /*
  * form
  */
