@@ -1,3 +1,9 @@
 <header class="layouts__header">
   page header
+    <%= link_to root_path do %>
+      <%= image_tag asset_path("logo.png"), alt: "logo" %>
+    <% end %>
+      <span><%= t(".blance") %></span>
+        <%= link_to t(".index"), blances_path %>
+        <%= link_to t(".new"), new_blance_path %>
 </header>
