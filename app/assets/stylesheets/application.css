@@ -14,6 +14,9 @@
  * require_self
  */
 
+/*
+ * global
+ */
 body {
 	margin: 0;
 	padding: 0;
@@ -31,6 +34,21 @@ input[type="time"]::-webkit-date-and-time-value {
 	text-align: left;
 }
 
+/*
+ * layouts
+ */
+.layouts__header {
+}
+
+.layouts__main {
+}
+
+.layouts__footer {
+}
+
+/*
+ * shared
+ */
 #flash_notice {
 	display: flex;
 	flex-direction: row;

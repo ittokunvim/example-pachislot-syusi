@@ -12,7 +12,11 @@
   </head>
 
   <body>
+    <%= render "layouts/header" %>
     <%= render "shared/notice" %>
-    <%= yield %>
+    <main class="layouts__main">
+      <%= yield %>
+    </main>
+    <%= render "layouts/footer" %>
   </body>
 </html>
