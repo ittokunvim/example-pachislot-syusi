@@ -1,9 +1,17 @@
 <header class="layouts__header">
-  page header
+  <div class="logo">
     <%= link_to root_path do %>
       <%= image_tag asset_path("logo.png"), alt: "logo" %>
     <% end %>
+  </div>
+  <div class="links">
+    <div>
       <span><%= t(".blance") %></span>
+      <button>↓</button>
+      <div class="dropdown">
         <%= link_to t(".index"), blances_path %>
         <%= link_to t(".new"), new_blance_path %>
+      </div>
+    </div>
+  </div>
 </header>
