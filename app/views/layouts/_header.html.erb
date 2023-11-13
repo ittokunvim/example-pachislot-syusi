@@ -5,13 +5,10 @@
     <% end %>
   </div>
   <div class="links">
-    <div>
-      <span><%= t(".blance") %></span>
-      <button>↓</button>
-      <div class="dropdown">
-        <%= link_to t(".index"), blances_path %>
-        <%= link_to t(".new"), new_blance_path %>
-      </div>
+    <button><%= t(".blance") %></button>
+    <div class="dropdown">
+      <%= link_to t(".index"), blances_path %>
+      <%= link_to t(".new"), new_blance_path %>
     </div>
   </div>
 </header>
