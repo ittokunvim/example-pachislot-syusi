@@ -129,6 +129,35 @@ input[type="time"]::-webkit-date-and-time-value {
 }
 
 .layouts__footer {
+	background-color: #eee;
+	padding: 0 0.5rem;
+	border-top: 1px solid lightgray;
+}
+
+.layouts__footer .technologys {
+	font-size: 0.9em;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 1em 2em;
+	margin-top: 2em;
+}
+
+.layouts__footer .technologys a {
+	color: dodgerblue;
+	text-decoration: none;
+}
+
+.layouts__footer .technologys a:hover {
+	text-decoration: underline;
+}
+
+.layouts__footer .copyright {
+	font-size: 0.8em;
+	text-align: center;
+	margin-top: 1rem;
 }
 
 /*
