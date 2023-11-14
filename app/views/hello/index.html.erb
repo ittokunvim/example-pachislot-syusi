@@ -5,3 +5,26 @@
 <p><%= @message %></p>
 
 <p><%= hello() %></p>
+
+<div>
+  <i class="fa-brands fa-font-awesome"></i>
+  <i class="fa-solid fa-user-secret"></i>
+  <i class="fa-regular fa-bell"></i>
+</div>
+
+<div>
+  <%= icon('fa-brands', 'font-awesome')%>
+  <%= icon('fa-solid', 'user-secret')%>
+  <%= icon('fa-regular', 'bell')%>
+</div>
+
+<div>
+  <i class="fa-solid fa-user-secret fa-7x fa-flip"></i>
+</div>
+
+<div>
+  <%= icon('fa-solid', 'user-secret', class:"fa-7x, fa-shake")%>
+  <%= icon('fa-brands', 'font-awesome', 'Font Awesome', id: 'my-icon', class: 'fa-shake')%>
+  <%= icon('fab', 'font-awesome', 'Font Awesome', id: 'my-icon', class: 'fa-beat')%>
+</div>
+
