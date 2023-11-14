@@ -19,6 +19,8 @@
 @import "layouts";
 @import "shared";
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
 $base-color: rgb(0, 0, 0);
 $base-background-color: rgb(255, 255, 255);
 
@@ -29,6 +31,10 @@ $base-background-color: rgb(255, 255, 255);
 }
 
 html {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 16px;
+  word-spacing: 2px;
+  letter-spacing: 1px;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
