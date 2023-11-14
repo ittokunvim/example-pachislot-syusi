@@ -36,6 +36,11 @@ ja:
   hello:
     index:
       title: "やっはろー"
+  layouts:
+    header:
+      blance: "収支"
+      index: "見る"
+      new: "作成する"
 
   activerecord:
     models:
