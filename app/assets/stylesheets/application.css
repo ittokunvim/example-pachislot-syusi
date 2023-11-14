@@ -126,6 +126,8 @@ input[type="time"]::-webkit-date-and-time-value {
 }
 
 .layouts__main {
+	min-height: 80vh;
+	padding: 1rem;
 }
 
 .layouts__footer {
