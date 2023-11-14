@@ -2,51 +2,51 @@
  * index
  */
 .blances__list {
-	font-size: 0.8rem;
-	overflow-x: auto;
+  font-size: 0.8rem;
+  overflow-x: auto;
 }
 
 .blances__list table {
-	width: max-content;
-	border-collapse: collapse;
+  width: max-content;
+  border-collapse: collapse;
 }
 
 .blances__list th,
 .blances__list td {
-	min-width: 80px;
-	max-width: 200px;
-	padding: 0.5em;
-	border: 1px solid #ddd;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+  min-width: 80px;
+  max-width: 200px;
+  padding: 0.5em;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .blances__list td:last-child {
-	padding: 0;
+  padding: 0;
 }
 
 .blances__list td:last-child ul {
-	display: flex;
-	flex-direction: column;
-	margin: 0;
-	padding: 0;
-	line-height: 2;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  line-height: 2;
 }
 
 .blances__list td:last-child ul a {
-	color: dodgerblue;
-	text-decoration: none;
-	padding: 0.25em 0.5em;
+  color: dodgerblue;
+  text-decoration: none;
+  padding: 0.25em 0.5em;
 }
 
 .blances__list td:last-child ul a:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 .blances__list td:last-child ul a:nth-child(even) {
-	background-color: #eee;
-	border-top: 1px solid #ddd;
+  background-color: #eee;
+  border-top: 1px solid #ddd;
 }
 
 /*
@@ -54,172 +54,172 @@
  */
 
 .blances__show {
-	box-sizing: border-box;
-	width: 100%;
-	max-width: 800px;
-	margin: 0 auto;
-	padding: 0.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0.5rem;
 }
 
 .blances__show table {
-	font-size: 0.9rem;
-	width: 100%;
-	border: 1px solid #ddd;
-	border-collapse: collapse;
+  font-size: 0.9rem;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-collapse: collapse;
 }
 
 .blances__show th,
 .blances__show td {
-	min-width: 80px;
-	max-width: 200px;
-	padding: 0.5em;
-    vertical-align: top;
+  min-width: 80px;
+  max-width: 200px;
+  padding: 0.5em;
+  vertical-align: top;
 }
 
 .blances__show th {
-	color: gray;
+  color: gray;
 }
 
 .blances__show td:last-child {
-    word-wrap: break-word;
-	white-space: pre-wrap;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 .blances__show .headline {
-	color: black;
-	background-color: #eee;
-	text-align: left;
+  color: black;
+  background-color: #eee;
+  text-align: left;
 }
 
 .blances__show .datetimes {
-	font-size: 0.8rem;
-	color: gray;
+  font-size: 0.8rem;
+  color: gray;
 }
 
 .blances__show .datetimes ul {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-	gap: 1em;
-	margin: 0;
-	padding: 0;
-	list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 1em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .blances__show .links {
-	font-size: 0.9rem;
-	display: inline-block;
-	border: 1px solid #ddd;
-	border-radius: 0.5em;
+  font-size: 0.9rem;
+  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: 0.5em;
 }
 
 .blances__show .links ul {
-	display: flex;
-	flex-direction: column;
-	margin: 0;
-	padding: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .blances__show .links ul a {
-	display: block;
-	padding: 0.5em 1em;
-	text-decoration: none;
-	color: black;
-	transition: all 0.2s ease-out;
+  display: block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: black;
+  transition: all 0.2s ease-out;
 }
 
 .blances__show .links ul a:first-child {
-	border-top-left-radius: 0.5em;
-	border-top-right-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
 }
 
 .blances__show .links ul a:last-child {
-	border-bottom-left-radius: 0.5em;
-	border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
 }
 
 .blances__show .links ul a.edit:hover {
-	color: white;
-	background-color: limegreen;
+  color: white;
+  background-color: limegreen;
 }
 
 .blances__show .links ul a.delete:hover {
-	color: white;
-	background-color: orangered;
+  color: white;
+  background-color: orangered;
 }
 
 .blances__show .links ul a.back:hover {
-	color: white;
-	background-color: gray;
+  color: white;
+  background-color: gray;
 }
 
 /*
  * form
  */
 .blances__form {
-	width: 100%;
-	max-width: 800px;
-	margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .blances__form form {
-	padding: 1em;
-	border: 1px solid lightgray;
-	border-radius: 0.5em;
+  padding: 1em;
+  border: 1px solid lightgray;
+  border-radius: 0.5em;
 }
 
 .blances__form .form_group {
-	display: flex;
-	flex-direction: column;
-	gap: 0.2em;
-	margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  margin-bottom: 1em;
 }
 
 .blances__form .form_group label {
-	font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 .blances__form .form_group input,
 .blances__form .form_group select,
 .blances__form .form_group textarea {
-	font-size: 1rem;
-	box-sizing: border-box;
-	width: 100%;
-	padding: 0.5em;
-	border: 1px solid black;
-	border-radius: 0.2em;
-	letter-spacing: 1px;
-	word-spacing: 2px;
-	background-color: white;
-	color: black;
+  font-size: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5em;
+  border: 1px solid black;
+  border-radius: 0.2em;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  background-color: white;
+  color: black;
 }
 
 .blances__form .form_group textarea {
-	height: 10em;
+  height: 10em;
 }
 
 .blances__form input[type="submit"] {
-	cursor: pointer;
-	font-size: 0.8rem;
-	font-weight: bold;
-	padding: 0.5em 1em;
-	border: 1px solid black;
-	border-radius: 0.5em;
-	background-color: limegreen;
-	color: white;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  border: 1px solid black;
+  border-radius: 0.5em;
+  background-color: limegreen;
+  color: white;
 }
 
 .blances__form .field_with_errors input,
 .blances__form .field_with_errors select,
 .blances__form .field_with_errors textarea {
-	border: 1px solid red;
+  border: 1px solid red;
 }
 
 @media screen and (min-width: 600px) {
-	.blances__form .form_group input,
-	.blances__form input[type="submit"],
-	.blances__form .form_group select,
-	.blances__form .form_group textarea {
-		font-size: 0.8rem;
-	}
+  .blances__form .form_group input,
+  .blances__form input[type="submit"],
+  .blances__form .form_group select,
+  .blances__form .form_group textarea {
+    font-size: 0.8rem;
+  }
 }
