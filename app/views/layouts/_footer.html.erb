@@ -3,9 +3,13 @@
     <%= link_to "Ruby on Rails", "https://rubyonrails.org/", target: "_blank", rel: "noopener" %>
     <%= link_to "render", "https://render.com/", target: "_blank", rel: "noopener" %>
     <%= link_to "PostgreSQL", "https://www.postgresql.org/", target: "_blank", rel: "noopener" %>
-    <%= link_to "GitHub", "https://github.com", target: "_blank", rel: "noopener" %>
+    <%= link_to "https://github.com", target: "_blank", rel: "noopener" do %>
+      <%= icon("fa-brands", "github") %>
+      GitHub
+    <% end %>
   </div>
   <div class="copyright">
+    <%= icon("fa-regular", "copyright") %>
     ittokunvim All Rights Reserved.
   </div>
 </footer>

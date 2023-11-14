@@ -13,6 +13,7 @@
  * require_tree .
  * require_self
  */
+@import "font-awesome";
 
 /*
  * global
@@ -65,11 +66,6 @@ input[type="time"]::-webkit-date-and-time-value {
 	border: none;
 }
 
-.layouts__header .links button::after {
-	content: "↓";
-	margin-left: 0.5em;
-}
-
 .layouts__header .links .dropdown {
 	display: none;
 	position: absolute;
@@ -117,7 +113,7 @@ input[type="time"]::-webkit-date-and-time-value {
 	display: block;
 	color: black;
 	text-decoration: none;
-	text-align: center;
+	text-align: left;
 	padding: 0.5em;
 }
 
@@ -178,11 +174,6 @@ input[type="time"]::-webkit-date-and-time-value {
 	text-align: center;
 }
 
-#flash_notice .batu-btn::before,
-#flash_notice .batu-btn::after {
-	background-color: dodgerblue;
-}
-
 #error_explanation {
 	display: flex;
 	flex-direction: row;
@@ -205,37 +196,7 @@ input[type="time"]::-webkit-date-and-time-value {
 	line-height: 2;
 }
 
-#error_explanation .batu-btn::before,
-#error_explanation .batu-btn::after {
-	background-color: crimson;
-}
-
-.batu-btn {
+#flash_notice .fa-xmark,
+#error_explanation .fa-xmark {
 	cursor: pointer;
-	position: relative;
-	width: 24px;
-	height: 24px;
-	margin: 0;
-	padding: 0;
-	border: none;
-	background-color: inherit;
-}
-
-.batu-btn::before,
-.batu-btn::after {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 3px;
-	height: 18px;
-	background-color: dodgerblue;
-}
-
-.batu-btn::before {
-	transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.batu-btn::after {
-	transform: translate(-50%, -50%) rotate(-45deg);
 }

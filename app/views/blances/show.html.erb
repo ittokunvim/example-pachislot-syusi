@@ -5,41 +5,50 @@
 <div class="blances__show">
   <table>
     <tr>
-      <th colspan="2" class="headline"><%= t(".date") %></th>
+      <th colspan="2" class="headline">
+        <i class="fa-regular fa-calendar"></i>
+        <%= t(".date") %>
+      </th>
     </tr>
     <tr>
       <th><%= Blance.human_attribute_name(:date) %></th>
       <td><%= l(@blance.date) %></td>
     </tr>
     <tr>
-      <th colspan="2" class="headline"><%= t(".blance") %></th>
+      <th colspan="2" class="headline">
+        <i class="fa-solid fa-calculator"></i>
+        <%= t(".blance") %>
+      </th>
     </tr>
     <tr>
       <th><%= Blance.human_attribute_name(:investment_money) %></th>
-      <td><%= @blance.investment_money %></td>
+      <td><%= @blance.investment_money || 0 %></td>
     </tr>
     <tr>
       <th><%= Blance.human_attribute_name(:recovery_money) %></th>
-      <td><%= @blance.recovery_money %></td>
+      <td><%= @blance.recovery_money || 0 %></td>
     </tr>
     <tr>
       <th><%= Blance.human_attribute_name(:investment_saving) %></th>
-      <td><%= @blance.investment_saving %></td>
+      <td><%= @blance.investment_saving || 0 %></td>
     </tr>
     <tr>
       <th><%= Blance.human_attribute_name(:recovery_saving) %></th>
-      <td><%= @blance.recovery_saving %></td>
+      <td><%= @blance.recovery_saving || 0 %></td>
     </tr>
     <tr>
       <th><%= Blance.human_attribute_name(:rate) %></th>
-      <td><%= @blance.rate %></td>
+      <td><%= @blance.rate || 0 %></td>
     </tr>
     <tr>
       <th><%= Blance.human_attribute_name(:result) %></th>
       <td><%= @blance.result %></td>
     </tr>
     <tr>
-      <th colspan="2" class="headline"><%= t(".machine") %></th>
+      <th colspan="2" class="headline">
+        <i class="fa-solid fa-coins"></i>
+        <%= t(".machine") %>
+      </th>
     </tr>
     <tr>
       <th><%= Blance.human_attribute_name(:category) %></th>
@@ -50,14 +59,20 @@
       <td><%= @blance.name %></td>
     </tr>
     <tr>
-      <th colspan="2" class="headline"><%= t(".store") %></th>
+      <th colspan="2" class="headline">
+        <i class="fa-solid fa-shop"></i>
+        <%= t(".store") %>
+      </th>
     </tr>
     <tr>
       <th><%= Blance.human_attribute_name(:store) %></th>
       <td><%= @blance.store %></td>
     </tr>
     <tr>
-      <th colspan="2" class="headline"><%= t(".etc") %></th>
+      <th colspan="2" class="headline">
+        <i class="fa-regular fa-comment"></i>
+        <%= t(".etc") %>
+      </th>
     </tr>
     <tr>
       <th><%= Blance.human_attribute_name(:note) %></th>

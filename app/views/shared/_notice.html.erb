@@ -1,6 +1,6 @@
 <% flash.each do |key, value| %>
   <div id="flash_<%= key %>" data-controller="shared" data-target="shared.field">
     <%= content_tag(:span, value) %>
-    <button data-action="click->shared#delete" class="batu-btn">x</button>
+    <i class="fa-solid fa-xmark" data-action="click->shared#delete"></i>
   </div>
 <% end %>
