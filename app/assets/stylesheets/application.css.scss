@@ -66,11 +66,6 @@ input[type="time"]::-webkit-date-and-time-value {
 	border: none;
 }
 
-.layouts__header .links button::after {
-	content: "↓";
-	margin-left: 0.5em;
-}
-
 .layouts__header .links .dropdown {
 	display: none;
 	position: absolute;
@@ -118,7 +113,7 @@ input[type="time"]::-webkit-date-and-time-value {
 	display: block;
 	color: black;
 	text-decoration: none;
-	text-align: center;
+	text-align: left;
 	padding: 0.5em;
 }
 

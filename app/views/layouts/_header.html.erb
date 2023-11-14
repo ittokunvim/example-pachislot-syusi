@@ -5,10 +5,19 @@
     <% end %>
   </div>
   <div class="links">
-    <button><%= t(".blance") %></button>
+    <button>
+      <%= t(".blance") %>
+      <%= icon("fa-solid", "caret-down") %>
+    </button>
     <div class="dropdown">
-      <%= link_to t(".index"), blances_path %>
-      <%= link_to t(".new"), new_blance_path %>
+      <%= link_to blances_path do %>
+        <%= icon("fa-solid", "table") %>
+        <%= t(".index") %>
+      <% end %>
+      <%= link_to new_blance_path do %>
+        <%= icon("fa-solid", "plus") %>
+        <%= t(".new") %>
+      <% end %>
     </div>
   </div>
 </header>
