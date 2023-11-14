@@ -57,7 +57,7 @@ ja:
         rate: "交換率"
         store: "店舗名"
         note: "備考"
-        result: "結果"
+        result: "結果（円）"
 
   attributes:
     id: "識別"
