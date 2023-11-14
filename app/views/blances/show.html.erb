@@ -6,8 +6,7 @@
   <table>
     <tr>
       <th colspan="2" class="headline">
-        <i class="fa-regular fa-calendar"></i>
-        <%= t(".date") %>
+        <%= icon("fa-regular", "calendar", t(".date")) %>
       </th>
     </tr>
     <tr>
@@ -16,8 +15,7 @@
     </tr>
     <tr>
       <th colspan="2" class="headline">
-        <i class="fa-solid fa-calculator"></i>
-        <%= t(".blance") %>
+        <%= icon("fa-solid", "calculator", t(".blance")) %>
       </th>
     </tr>
     <tr>
@@ -46,8 +44,7 @@
     </tr>
     <tr>
       <th colspan="2" class="headline">
-        <i class="fa-solid fa-coins"></i>
-        <%= t(".machine") %>
+        <%= icon("fa-solid", "coins", t(".machine")) %>
       </th>
     </tr>
     <tr>
@@ -60,8 +57,7 @@
     </tr>
     <tr>
       <th colspan="2" class="headline">
-        <i class="fa-solid fa-shop"></i>
-        <%= t(".store") %>
+        <%= icon("fa-solid", "shop", t(".store")) %>
       </th>
     </tr>
     <tr>
@@ -70,8 +66,7 @@
     </tr>
     <tr>
       <th colspan="2" class="headline">
-        <i class="fa-regular fa-comment"></i>
-        <%= t(".etc") %>
+        <%= icon("fa-regular", "comment", t(".etc")) %>
       </th>
     </tr>
     <tr>
@@ -87,9 +82,15 @@
   </div>
   <div class="links">
     <ul>
-      <%= link_to t(".edit"), edit_blance_path(@blance), class: "edit" %>
-      <%= link_to t(".delete"), @blance, data: { turbo_method: :delete, turbo_confirm: t(".confirm") }, class: "delete" %>
-      <%= link_to t("defaults.back"), blances_path, class: "back" %>
+      <%= link_to edit_blance_path(@blance), class: "edit" do %>
+        <%= icon("fa-regular", "edit", t(".edit")) %>
+      <% end %>
+      <%= link_to @blance, data: { turbo_method: :delete, turbo_confirm: t(".confirm") }, class: "delete" do %>
+        <%= icon("fa-regular", "trash-alt", t(".delete")) %>
+      <% end %>
+      <%= link_to blances_path, class: "back" do %>
+        <%= icon("fa-solid", "arrow-left", t("defaults.back")) %>
+      <% end %>
     </ul>
   </div>
 </div>
