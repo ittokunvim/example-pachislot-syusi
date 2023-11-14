@@ -3,11 +3,12 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  font-size: 0.8rem;
   margin-bottom: 1rem;
   padding: 1rem;
-  border-left: 4px solid dodgerblue;
-  background-color: lightblue;
-  color: dodgerblue;
+  border-left: 4px solid $shared-flash-notice-color;
+  color: $shared-flash-notice-color;
+  background-color: $shared-flash-notice-background-color;
   text-align: center;
 }
 
@@ -16,14 +17,12 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-  word-spacing: 2px;
-  background: pink;
-  color: crimson;
+  font-size: 0.8rem;
   padding: 1rem;
-  border: 1px solid crimson;
+  border: 1px solid $shared-error-explanation-color;
   border-radius: 0.5em;
+  color: $shared-error-explanation-color;
+  background-color: $shared-error-explanation-background-color;
 }
 
 #error_explanation ul {

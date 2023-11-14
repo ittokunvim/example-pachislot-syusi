@@ -16,13 +16,11 @@
 
 @import "font-awesome";
 
+@import "variables";
 @import "layouts";
 @import "shared";
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
-
-$base-color: rgb(0, 0, 0);
-$base-background-color: rgb(255, 255, 255);
 
 * {
   box-sizing: border-box;
