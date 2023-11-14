@@ -1,0 +1,39 @@
+#flash_notice {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-left: 4px solid dodgerblue;
+  background-color: lightblue;
+  color: dodgerblue;
+  text-align: center;
+}
+
+#error_explanation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  background: pink;
+  color: crimson;
+  padding: 1rem;
+  border: 1px solid crimson;
+  border-radius: 0.5em;
+}
+
+#error_explanation ul {
+  margin: 0;
+  padding-left: 1em;
+  list-style: circle;
+  line-height: 2;
+}
+
+#flash_notice .fa-xmark,
+#error_explanation .fa-xmark {
+  cursor: pointer;
+}
