@@ -1,4 +1,6 @@
 class Blance < ApplicationRecord
+  default_scope -> { order(date: :desc) }
+
   validates :date, presence: true
   validates :category, length: { maximum: 100 }
   validates :rate, numericality: { less_than: 2**10, allow_nil: true }
@@ -18,7 +20,7 @@ class Blance < ApplicationRecord
     validates :recovery_saving
   end
 
-  def caluculate_blance
+  def result
     investment_money = self.investment_money.to_i
     recovery_money = self.recovery_money.to_i
     rate = self.rate.to_f

@@ -7,6 +7,7 @@ class LayoutsTest < ApplicationSystemTestCase
     # header
     assert_link "", href: root_path
     assert_text I18n.t("layouts.header.blance")
+    find(".layouts__header .links button").hover
     assert_link I18n.t("layouts.header.index"), href: blances_path
     assert_link I18n.t("layouts.header.new"), href: new_blance_path
     # footer
