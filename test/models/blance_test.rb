@@ -13,6 +13,10 @@ class BlanceTest < ActiveSupport::TestCase
     assert Blance.new.invalid?
   end
 
+  test "order should be most recent first" do
+    assert_equal blances(:most_recent), Blance.first
+  end
+
   test "date should be present" do
     @blance.date = "     "
     assert_not @blance.valid?

@@ -4,6 +4,7 @@ class BlancesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @blance = blances(:one)
     @blance_hash = @blance.attributes
+    @blance_hash["date"] = @blance.date + 1.year
     @blance_hash.delete("id")
     @blance_hash.delete("created_at")
     @blance_hash.delete("updated_at")
@@ -38,7 +39,7 @@ class BlancesControllerTest < ActionDispatch::IntegrationTest
     assert_difference("Blance.count", 1) do
       post blances_url, params: { blance: @blance_hash }
     end
-    assert_redirected_to blance_url Blance.last
+    assert_redirected_to blance_url Blance.first
   end
 
   test "should return bad_request when post create" do

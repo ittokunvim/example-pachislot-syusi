@@ -1,4 +1,6 @@
 class Blance < ApplicationRecord
+  default_scope -> { order(date: :desc) }
+
   validates :date, presence: true
   validates :category, length: { maximum: 100 }
   validates :rate, numericality: { less_than: 2**10, allow_nil: true }

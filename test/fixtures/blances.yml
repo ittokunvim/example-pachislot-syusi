@@ -27,3 +27,6 @@ two:
  rate: 4.0
  store: マルハン東京店
  note: よく出たなー
+
+most_recent:
+  date: <%= Date.today %>
