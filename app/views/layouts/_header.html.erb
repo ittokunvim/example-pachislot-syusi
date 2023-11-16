@@ -11,12 +11,10 @@
     </button>
     <div class="dropdown">
       <%= link_to blances_path do %>
-        <%= icon("fa-solid", "table") %>
-        <%= t(".index") %>
+        <%= icon("fa-solid", "table", t(".index")) %>
       <% end %>
       <%= link_to new_blance_path do %>
-        <%= icon("fa-solid", "plus") %>
-        <%= t(".new") %>
+        <%= icon("fa-solid", "plus", t(".new")) %>
       <% end %>
     </div>
   </div>
