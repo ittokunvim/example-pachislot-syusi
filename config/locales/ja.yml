@@ -41,6 +41,12 @@ ja:
       blance: "収支"
       index: "見る"
       new: "作成する"
+  static_pages:
+    home:
+      headline: "このサイトについて"
+      description: "このサイトはパチンコやスロットの収支を記録、保存することのできる場所です。"
+      description2: "以下のボタンをクリックして、収支を記録して見ましょう！"
+      create_blance: "収支を作成する"
 
   activerecord:
     models:
