@@ -1,0 +1,13 @@
+<div class="staticpage__home">
+  <div class="top">
+    <%= image_tag "top-1920x1200.jpg", alt: "Top image", size: "1920x1200" %>
+    <div class="text">
+      <%= content_tag(:h1, t(".headline")) %>
+      <%= content_tag(:p, t(".description")) %>
+      <%= content_tag(:p, t(".description2")) %>
+      <%= link_to new_blance_path do %>
+        <%= icon("fa-solid", "chart-simple", t(".create_blance")) %>
+      <% end %>
+    </div>
+  </div>
+</div>
