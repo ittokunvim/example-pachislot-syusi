@@ -52,4 +52,9 @@ class HistoryTest < ActiveSupport::TestCase
     @history.memo = "a" * 1001
     assert_not @history.valid?
   end
+
+  test "associated history_order should be valid" do
+    @history.save
+    assert @history.history_order
+  end
 end

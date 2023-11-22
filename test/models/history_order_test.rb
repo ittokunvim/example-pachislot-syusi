@@ -40,4 +40,16 @@ class HistoryOrderTest < ActiveSupport::TestCase
     @history_order.order = "     "
     assert @history_order.valid?
   end
+
+  test "associated histories should be valid" do
+    @history_order.save
+    assert @history_order.histories
+  end
+
+  test "associated history should be destroyed" do
+    @history_order.save
+    assert_difference "History.count", -1 do
+      @history_order.destroy
+    end
+  end
 end
