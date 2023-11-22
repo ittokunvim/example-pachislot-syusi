@@ -7,7 +7,6 @@ class HistoryOrderTest < ActiveSupport::TestCase
 
   test "should be valid" do
     assert @history_order.valid?
-    assert HistoryOrder.new.valid?
   end
 
   test "order should not be too long" do
@@ -39,6 +38,11 @@ class HistoryOrderTest < ActiveSupport::TestCase
   test "order allow blank" do
     @history_order.order = "     "
     assert @history_order.valid?
+  end
+
+  test "associated blance should be valid" do
+    @history_order.save
+    assert @history_order.blance
   end
 
   test "associated histories should be valid" do

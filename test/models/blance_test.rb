@@ -92,6 +92,18 @@ class BlanceTest < ActiveSupport::TestCase
     assert_not @blance.valid?
   end
 
+  test "associated history_orders should be valid" do
+    @blance.save
+    assert @blance.history_order
+  end
+
+  test "associated history_orders should be destroyed" do
+    @blance.save
+    assert_difference "HistoryOrder.count", -1 do
+      @blance.destroy
+    end
+  end
+
   test "result() should be correct (rate: 4.0)" do
     blance = Blance.new(
       investment_money: 24_000,

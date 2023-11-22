@@ -1,4 +1,6 @@
 class Blance < ApplicationRecord
+  has_one :history_order, dependent: :destroy
+
   default_scope -> { order(date: :desc) }
 
   validates :date, presence: true

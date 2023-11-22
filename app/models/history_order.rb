@@ -1,4 +1,5 @@
 class HistoryOrder < ApplicationRecord
+  belongs_to :blance
   has_many :histories, dependent: :destroy
 
   ORDER_REGEX = /(\d+,)+\d+\Z/
