@@ -7,15 +7,7 @@ class HistoryOrderTest < ActiveSupport::TestCase
 
   test "should be valid" do
     assert @history_order.valid?
-  end
-
-  test "should be invalid" do
-    assert HistoryOrder.new.invalid?
-  end
-
-  test "order should be present" do
-    @history_order.order = "     "
-    assert_not @history_order.valid?
+    assert HistoryOrder.new.valid?
   end
 
   test "order should not be too long" do
@@ -42,5 +34,10 @@ class HistoryOrderTest < ActiveSupport::TestCase
       @history_order.order = invalid_order
       assert @history_order.invalid?, "#{invalid_order.inspect} should be invalid"
     end
+  end
+
+  test "order allow blank" do
+    @history_order.order = "     "
+    assert @history_order.valid?
   end
 end
