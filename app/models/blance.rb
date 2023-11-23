@@ -1,5 +1,5 @@
 class Blance < ApplicationRecord
-  has_one :history_order, dependent: :destroy
+  has_one :history, class_name: "HistoryOrder", dependent: :destroy
 
   default_scope -> { order(date: :desc) }
 
@@ -30,5 +30,10 @@ class Blance < ApplicationRecord
     recovery_saving = self.recovery_saving.to_i * rate
     result = recovery_money - investment_money + recovery_saving - investment_saving
     result.round
+  end
+
+  def histories
+    return nil if history.nil?
+    history.sort_order
   end
 end
