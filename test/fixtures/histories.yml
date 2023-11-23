@@ -13,3 +13,27 @@ two:
   investment: 1000円
   memo: 単独
   history_order: two
+
+id1:
+  id: 1
+  game_count: 1
+  chance: BB
+  investment: 1000円
+  memo: 単独
+  history_order: sort_order
+
+id2:
+  id: 2
+  game_count: 2
+  chance: BB
+  investment: 2000円
+  memo: 単独
+  history_order: sort_order
+
+id3:
+  id: 3
+  game_count: 3
+  chance: BB
+  investment: 3000円
+  memo: 単独
+  history_order: sort_order
