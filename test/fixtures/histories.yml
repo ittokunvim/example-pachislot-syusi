@@ -1,0 +1,39 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  game_count: 160
+  chance: BB
+  investment: 4000円
+  memo: チェリー重複
+  history_order: one
+
+two:
+  game_count: 10
+  chance: RB
+  investment: 1000円
+  memo: 単独
+  history_order: two
+
+id1:
+  id: 1
+  game_count: 1
+  chance: BB
+  investment: 1000円
+  memo: 単独
+  history_order: sort_order
+
+id2:
+  id: 2
+  game_count: 2
+  chance: BB
+  investment: 2000円
+  memo: 単独
+  history_order: sort_order
+
+id3:
+  id: 3
+  game_count: 3
+  chance: BB
+  investment: 3000円
+  memo: 単独
+  history_order: sort_order

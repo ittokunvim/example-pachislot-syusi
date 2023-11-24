@@ -88,11 +88,11 @@ class BlancesTest < ApplicationSystemTestCase
     click_on I18n.t("blances.edit.button_text")
     assert_selector "div#error_explanation"
     # valid input
-    fill_in I18n.t("activerecord.attributes.blance.date"), with: Date.today
+    fill_in I18n.t("activerecord.attributes.blance.date"), with: Time.zone.today
     click_on I18n.t("blances.edit.button_text")
     # check redirect
     assert_selector "div#flash_notice", text: I18n.t("blances.update.notice")
-    assert_text I18n.l(Date.today)
+    assert_text I18n.l(Time.zone.today)
   end
 
   test "destroying a Blance" do

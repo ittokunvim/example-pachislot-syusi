@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_27_152346) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_22_132434) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,4 +29,25 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_27_152346) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "histories", force: :cascade do |t|
+    t.integer "game_count", null: false
+    t.string "chance", limit: 100, null: false
+    t.string "investment", limit: 100, null: false
+    t.text "memo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "history_order_id", null: false
+    t.index ["history_order_id"], name: "index_histories_on_history_order_id"
+  end
+
+  create_table "history_orders", force: :cascade do |t|
+    t.string "order", limit: 1000
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "blance_id", null: false
+    t.index ["blance_id"], name: "index_history_orders_on_blance_id"
+  end
+
+  add_foreign_key "histories", "history_orders"
+  add_foreign_key "history_orders", "blances"
 end
