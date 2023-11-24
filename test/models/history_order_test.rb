@@ -24,11 +24,11 @@ class HistoryOrderTest < ActiveSupport::TestCase
   end
 
   test "order should be invalid format" do
-    invalid_orders = %w[
-      hogebar
-      1, 2, 3, 4, 5
-      6,7,8,9,10,11,
-      12,13, 14,15, 16
+    invalid_orders = [
+      "hogebar",
+      "1, 2, 3, 4, 5",
+      "6,7,8,9,10,11,",
+      "12,13, 14,15, 16"
     ]
     invalid_orders.each do |invalid_order|
       @history_order.order = invalid_order

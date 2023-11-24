@@ -34,6 +34,7 @@ class Blance < ApplicationRecord
 
   def histories
     return nil if history.nil?
+
     history.sort_order
   end
 end

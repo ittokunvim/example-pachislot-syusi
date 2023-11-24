@@ -7,6 +7,7 @@ class HistoryOrder < ApplicationRecord
 
   def sort_order
     return histories if order.blank?
+
     order_array = order.split(',').map(&:to_i)
     histories.sort_by { |history| order_array.index(history.id) }
   end
