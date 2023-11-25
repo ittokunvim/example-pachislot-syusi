@@ -53,8 +53,7 @@ class HistoryTest < ActiveSupport::TestCase
     assert_not @history.valid?
   end
 
-  test "associated history_order should be valid" do
-    @history.save
-    assert @history.history_order
+  test "associated blance should be valid" do
+    assert @history.blance
   end
 end

@@ -3,7 +3,6 @@ require "test_helper"
 class HistoryOrderTest < ActiveSupport::TestCase
   def setup
     @history_order = history_orders(:one)
-    @sort_order = history_orders(:sort_order)
   end
 
   test "should be valid" do
@@ -44,27 +43,5 @@ class HistoryOrderTest < ActiveSupport::TestCase
   test "associated blance should be valid" do
     @history_order.save
     assert @history_order.blance
-  end
-
-  test "associated histories should be valid" do
-    @history_order.save
-    assert @history_order.histories
-  end
-
-  test "associated history should be destroyed" do
-    @history_order.save
-    assert_difference "History.count", -1 do
-      @history_order.destroy
-    end
-  end
-
-  test "sort_order() returns an arbitrarily ordered histories" do
-    order = @sort_order.order
-    assert_equal order.split(",").map(&:to_i), @sort_order.sort_order.map(&:id)
-  end
-
-  test "sort_order() returns histories when order is nil" do
-    @sort_order.order = nil
-    assert_equal @sort_order.histories, @sort_order.sort_order
   end
 end

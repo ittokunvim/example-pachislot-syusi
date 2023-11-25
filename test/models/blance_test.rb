@@ -92,14 +92,22 @@ class BlanceTest < ActiveSupport::TestCase
     assert_not @blance.valid?
   end
 
-  test "associated history_orders should be valid" do
-    @blance.save
-    assert @blance.history
+  test "associated history_order should be valid" do
+    assert @blance.history_order
   end
 
-  test "associated history_orders should be destroyed" do
-    @blance.save
+  test "associated history_order should be destroyed" do
     assert_difference "HistoryOrder.count", -1 do
+      @blance.destroy
+    end
+  end
+
+  test "associated histories should be valid" do
+    assert @blance.histories
+  end
+
+  test "associated histories should be destroyed" do
+    assert_difference "History.count", -3 do
       @blance.destroy
     end
   end
@@ -137,14 +145,13 @@ class BlanceTest < ActiveSupport::TestCase
     assert_equal 0, blance.result
   end
 
-  test "histories() should be alias for history_order.sort_order()" do
-    most_recent = blances(:most_recent)
-    history = most_recent.history
-    assert_equal history.sort_order, most_recent.histories
+  test "sort_histories() returns an arbitrarily ordered histories" do
+    order = @blance.history_order.order
+    assert_equal order.split(",").map(&:to_i), @blance.sort_histories.map(&:id)
   end
 
-  test "histories() should return nil if history does not exist" do
-    @blance.history = nil
-    assert_nil @blance.histories
+  test "sort_histories() returns histories when order is nil" do
+    @blance.history_order.order = nil
+    assert_equal @blance.histories, @blance.sort_histories
   end
 end

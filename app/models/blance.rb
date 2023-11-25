@@ -1,5 +1,6 @@
 class Blance < ApplicationRecord
-  has_one :history, class_name: "HistoryOrder", dependent: :destroy
+  has_one :history_order, dependent: :destroy
+  has_many :histories, dependent: :destroy
 
   default_scope -> { order(date: :desc) }
 
@@ -32,9 +33,10 @@ class Blance < ApplicationRecord
     result.round
   end
 
-  def histories
-    return nil if history.nil?
+  def sort_histories
+    return histories if history_order.order.blank?
 
-    history.sort_order
+    order_array = history_order.order.split(',').map(&:to_i)
+    histories.sort_by { |history| order_array.index(history.id) }
   end
 end

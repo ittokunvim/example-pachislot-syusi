@@ -1,13 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  order: ""
+  order: "3,1,2"
   blance: one
 
 two:
   order: ""
   blance: two
-
-sort_order:
-  order: "3,1,2"
-  blance: most_recent
