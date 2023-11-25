@@ -34,10 +34,10 @@ Blance.create!(
 )
 puts "Blance count: #{Blance.count}"
 
-history_order = blance.create_history!
+blance.create_history_order!
 puts "HistoryOrder count: #{HistoryOrder.count}"
 
-history1 = history_order.histories.create!(
+history1 = blance.histories.create!(
   game_count: 3,
   chance: "BB",
   investment: "3000円",
@@ -45,7 +45,7 @@ history1 = history_order.histories.create!(
 )
 puts "History count: #{History.count}"
 
-history2 = history_order.histories.create!(
+history2 = blance.histories.create!(
   game_count: 2,
   chance: "RB",
   investment: "2000円",
@@ -53,7 +53,7 @@ history2 = history_order.histories.create!(
 )
 puts "History count: #{History.count}"
 
-history3 = history_order.histories.create!(
+history3 = blance.histories.create!(
   game_count: 1,
   chance: "BB",
   investment: "1000円",
@@ -62,6 +62,6 @@ history3 = history_order.histories.create!(
 puts "History count: #{History.count}"
 
 history_ids = [history3.id, history2.id, history1.id]
-history_order.order = history_ids.join(",")
-history_order.save!
+blance.history_order.order = history_ids.join(",")
+blance.history_order.save!
 puts "history_order updated"

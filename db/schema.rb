@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_22_132434) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_25_144318) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -36,8 +36,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_22_132434) do
     t.text "memo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "history_order_id", null: false
-    t.index ["history_order_id"], name: "index_histories_on_history_order_id"
+    t.bigint "blance_id", null: false
+    t.index ["blance_id"], name: "index_histories_on_blance_id"
   end
 
   create_table "history_orders", force: :cascade do |t|
@@ -48,6 +48,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_22_132434) do
     t.index ["blance_id"], name: "index_history_orders_on_blance_id"
   end
 
-  add_foreign_key "histories", "history_orders"
+  add_foreign_key "histories", "blances"
   add_foreign_key "history_orders", "blances"
 end
