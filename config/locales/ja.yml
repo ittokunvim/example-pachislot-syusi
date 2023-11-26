@@ -36,6 +36,19 @@ ja:
   hello:
     index:
       title: "やっはろー"
+  histories:
+    index:
+      title: "%{date}の遊戯履歴"
+    edit:
+      title: "%{date}の履歴編集"
+    create:
+      notice: "遊戯履歴を作成しました"
+      alert: "遊戯履歴の作成に失敗しました"
+    update:
+      notice: "遊戯履歴を更新しました"
+      alert: "遊戯履歴の更新に失敗しました"
+    destroy:
+      notice: "遊戯履歴を削除しました"
   layouts:
     header:
       blance: "収支"

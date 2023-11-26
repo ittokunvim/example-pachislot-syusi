@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "/hello", to: "hello#index"
 
   resources :blances, path: "/syusi" do
-    get "/history", to: "histories#index"
-    resources :histories, only: %i[create update destroy]
+    get "/history", to: "histories#index", as: :index_history
+    resources :histories, only: %i[edit create update destroy]
   end
 end
