@@ -63,6 +63,7 @@ class BlancesControllerTest < ActionDispatch::IntegrationTest
     @blance_hash["category"] = "a" * 101
     assert_no_changes -> { @blance.category } do
       patch blance_url @blance, params: { blance: @blance_hash }
+      @blance.reload
     end
     assert_response :bad_request
   end
