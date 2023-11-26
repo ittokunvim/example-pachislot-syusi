@@ -154,4 +154,15 @@ class BlanceTest < ActiveSupport::TestCase
     @blance.history_order.order = nil
     assert_equal @blance.histories, @blance.sort_histories
   end
+
+  test "sort_histories() ignores the value when history_order contains an invalid value" do
+    order = @blance.history_order.order
+    @blance.history_order.order += ",9999"
+    assert_equal order.split(",").map(&:to_i), @blance.sort_histories.map(&:id)
+  end
+
+  test "sort_histories() put the value at the bottom when history_order does not contain the value" do
+    @blance.history_order.order.sub!(",1", "")
+    assert_equal 1, @blance.sort_histories.last.id
+  end
 end

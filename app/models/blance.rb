@@ -37,6 +37,6 @@ class Blance < ApplicationRecord
     return histories if history_order.order.blank?
 
     order_array = history_order.order.split(',').map(&:to_i)
-    histories.sort_by { |history| order_array.index(history.id) }
+    histories.sort_by { |history| order_array.index(history.id) || 9999 }
   end
 end
