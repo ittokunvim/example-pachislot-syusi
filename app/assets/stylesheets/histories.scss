@@ -36,23 +36,27 @@
       text-align: center;
     }
   }
-  .form {
-    width: 100%;
-    max-width: 400px;
-    padding: 1rem 0;
-    form {
-      padding: 1em;
-      border: 1px solid $border-color;
-      .form_group {
-        display: flex;
-        flex-direction: column;
-        gap: 0.2em;
-        margin-top: 0.5em;
-        // label {}
-        // input {}
-        // textarea {}
-        // input[type="submit"] {}
-      }
+  .histories__form {
+    padding: 1em 0;
+  }
+}
+
+.histories__form {
+  width: 100%;
+  max-width: 400px;
+  padding: 1rem;
+  form {
+    padding: 1em;
+    border: 1px solid $border-color;
+    .form_group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2em;
+      margin-top: 0.5em;
+      // label {}
+      // input {}
+      // textarea {}
+      // input[type="submit"] {}
     }
   }
 }

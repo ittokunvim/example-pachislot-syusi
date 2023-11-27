@@ -48,6 +48,7 @@ ja:
       button_text: "遊技履歴を作成"
     edit:
       title: "%{date}の履歴編集"
+      button_text: "遊技履歴を編集"
     create:
       notice: "遊戯履歴を作成しました"
       alert: "遊戯履歴の作成に失敗しました"

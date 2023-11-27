@@ -22,7 +22,5 @@
       <p><%= t(".no_history") %></p>
     <% end %>
   </div>
-  <div class="form">
-    <%= render "form", { history: @histories.build } %>
-  </div>
+  <%= render "form", { history: @histories.build } %>
 </div>
