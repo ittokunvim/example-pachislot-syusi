@@ -60,4 +60,16 @@ class HistoriesTest < ApplicationSystemTestCase
     assert_selector "div#flash_notice", text: I18n.t("histories.update.notice")
     assert_text @history.memo
   end
+
+  test "destroying a History" do
+    @blance = blances(:two)
+    @history = @blance.histories.first
+    visit blance_index_history_url(@blance)
+
+    click_on I18n.t("histories.history.destroy")
+    assert_match page.driver.browser.switch_to.alert.text, I18n.t("histories.history.confirm")
+    page.driver.browser.switch_to.alert.accept
+    assert_selector "div#flash_notice", text: I18n.t("histories.destroy.notice")
+    assert_no_text @history.memo
+  end
 end
