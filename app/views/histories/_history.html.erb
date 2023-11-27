@@ -1,0 +1,12 @@
+<tr>
+  <td><%= history.game_count %></td>
+  <td><%= history.chance %></td>
+  <td><%= history.investment %></td>
+  <td><%= history.memo %></td>
+  <td>
+    <ul>
+      <%= link_to(t(".edit"), edit_blance_history_path(@blance, history)) %>
+      <%= link_to(t(".destroy"), blance_history_path(@blance, history), data: { turbo_method: :delete, turbo_confirm: t(".confirm") }) %>
+    </ul>
+</tr>
+

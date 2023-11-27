@@ -1,1 +1,24 @@
 <% content_for(:title, t(".title", date: l(@blance.date))) %>
+
+<div class="histories__index">
+  <div class="list">
+    <% if @histories.any? %>
+      <table>
+        <thead>
+          <tr>
+            <th><%= History.human_attribute_name(:game_count) %></th>
+            <th><%= History.human_attribute_name(:chance) %></th>
+            <th><%= History.human_attribute_name(:investment) %></th>
+            <th><%= History.human_attribute_name(:memo) %></th>
+            <th><%= t(".operation") %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: :history, collection: @histories %>
+        </tbody>
+      </table>
+    <% else %>
+      <p><%= t(".no_history") %></p>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+@import "variables";
+
+//
+// index
+//
+.histories__index {
+  padding: 1rem;
+  .list {
+    table {
+      border: 1px solid $border-color;
+      border-collapse: collapse;
+      th {
+        padding: 0.5em;
+        border: 1px solid $border-color;
+      }
+      td {
+        padding: 0.5em;
+        border: 1px solid $border-color;
+      }
+      td:last-child {
+        ul {
+          display: flex;
+          flex-direction: column;
+          line-height: 2;
+          a {
+            color: $link-color;
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    p {
+      text-align: center;
+    }
+  }
+}

@@ -37,8 +37,14 @@ ja:
     index:
       title: "やっはろー"
   histories:
+    history:
+      edit: "編集する"
+      destroy: "削除する"
+      confirm: "本当に遊技履歴を削除してよろしいでしょうか？"
     index:
       title: "%{date}の遊戯履歴"
+      operation: "操作"
+      no_history: "遊技履歴は保存されていません"
     edit:
       title: "%{date}の履歴編集"
     create:
@@ -77,7 +83,11 @@ ja:
         store: "店舗名"
         note: "備考"
         result: "結果（円）"
-
+      history:
+        game_count: "ゲーム数"
+        chance: "契機"
+        investment: "投資"
+        memo: "メモ"
   attributes:
     id: "識別"
     created_at: "作成日時"
