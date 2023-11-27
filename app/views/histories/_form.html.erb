@@ -1,0 +1,19 @@
+<%= form_with model: [@blance, history], local: true do |f| %>
+  <div class="form_group">
+    <%= f.label :game_count %>
+    <%= f.number_field :game_count %>
+  </div>
+  <div class="form_group">
+    <%= f.label :chance %>
+    <%= f.text_field :chance %>
+  </div>
+  <div class="form_group">
+    <%= f.label :investment %>
+    <%= f.text_field :investment %>
+  </div>
+  <div class="form_group">
+    <%= f.label :memo %>
+    <%= f.text_area :memo %>
+  </div>
+  <%= f.submit yield(:button_text) %>
+<% end %>

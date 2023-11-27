@@ -45,6 +45,7 @@ ja:
       title: "%{date}の遊戯履歴"
       operation: "操作"
       no_history: "遊技履歴は保存されていません"
+      button_text: "遊技履歴を作成"
     edit:
       title: "%{date}の履歴編集"
     create:

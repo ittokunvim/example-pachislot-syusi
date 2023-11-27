@@ -1,4 +1,5 @@
 <% content_for(:title, t(".title", date: l(@blance.date))) %>
+<% provide(:button_text, t(".button_text")) %>
 
 <div class="histories__index">
   <div class="list">
@@ -20,5 +21,8 @@
     <% else %>
       <p><%= t(".no_history") %></p>
     <% end %>
+  </div>
+  <div class="form">
+    <%= render "form", { history: @histories.build } %>
   </div>
 </div>

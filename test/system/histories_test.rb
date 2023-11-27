@@ -21,4 +21,23 @@ class HistoriesTest < ApplicationSystemTestCase
       assert_link I18n.t("histories.history.destroy"), href: blance_history_path(@blance, history)
     end
   end
+
+  test "creating a History" do
+    @history = @histories.first
+    @history.memo = "testtest"
+    visit blance_index_history_url(@blance)
+
+    # invalid input
+    click_on I18n.t("histories.index.button_text")
+    assert_selector "div#flash_alert"
+    # valid input
+    fill_in I18n.t("activerecord.attributes.history.game_count"), with: @history.game_count
+    fill_in I18n.t("activerecord.attributes.history.chance"), with: @history.chance
+    fill_in I18n.t("activerecord.attributes.history.investment"), with: @history.investment
+    fill_in I18n.t("activerecord.attributes.history.memo"), with: @history.memo
+    click_on I18n.t("histories.index.button_text")
+    # check redirect
+    assert_selector "div#flash_notice", text: I18n.t("histories.create.notice")
+    assert_text @history.memo
+  end
 end
