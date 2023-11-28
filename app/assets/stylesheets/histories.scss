@@ -64,15 +64,41 @@
   form {
     padding: 1em;
     border: 1px solid $border-color;
+    border-radius: 0.5em;
     .form_group {
       display: flex;
       flex-direction: column;
       gap: 0.2em;
-      margin-top: 0.5em;
-      // label {}
-      // input {}
-      // textarea {}
-      // input[type="submit"] {}
+      margin-bottom: 0.5em;
+      label {
+        font-size: 0.8rem;
+      }
+      input,
+      textarea {
+        font-size: 1rem;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0.25em;
+        border: 1px solid $border-color;
+        border-radius: 0.2em;
+        letter-spacing: 1px;
+        word-spacing: 2px;
+        background-color: $base-background-color;
+        color: $base-color;
+      }
+    }
+    textarea {
+      height: 10em;
+    }
+    input[type="submit"] {
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: bold;
+      padding: 0.5em 1em;
+      border: 1px solid black;
+      border-radius: 0.5em;
+      background-color: $blances-form-submit-background-color;
+      color: white;
     }
   }
 }
