@@ -4,36 +4,52 @@
 // index
 //
 .histories__index {
+  font-size: 0.8rem;
+  overflow-x: auto;
   padding: 1rem;
-  .list {
-    table {
+  table {
+    width: max-content;
+    border-collapse: collapse;
+    th,
+    td {
+      min-width: 80px;
+      max-width: 200px;
+      padding: 0.5em;
       border: 1px solid $border-color;
-      border-collapse: collapse;
-      th {
-        padding: 0.5em;
-        border: 1px solid $border-color;
-      }
-      td {
-        padding: 0.5em;
-        border: 1px solid $border-color;
-      }
-      td:last-child {
-        ul {
-          display: flex;
-          flex-direction: column;
-          line-height: 2;
-          a {
-            color: $link-color;
-            text-decoration: none;
-            &:hover {
-              text-decoration: underline;
-            }
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    td:last-child {
+      padding: 0;
+      ul {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        line-height: 2;
+        a {
+          color: $link-color;
+          text-decoration: none;
+          padding: 0.25em 0.5em;
+          &:hover {
+            text-decoration: underline;
+          }
+          &:nth-child(even) {
+            background-color: $list-even-background-color;
+            border-top: 1px solid $border-color;
           }
         }
       }
     }
+  }
+  .no_history {
+    margin: 0 auto;
+    text-align: center;
     p {
-      text-align: center;
+      display: inline-block;
+      padding: 1em;
+      border: 1px solid $border-color;
     }
   }
   .histories__form {
