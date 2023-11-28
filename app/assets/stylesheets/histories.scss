@@ -1,0 +1,62 @@
+@import "variables";
+
+//
+// index
+//
+.histories__index {
+  padding: 1rem;
+  .list {
+    table {
+      border: 1px solid $border-color;
+      border-collapse: collapse;
+      th {
+        padding: 0.5em;
+        border: 1px solid $border-color;
+      }
+      td {
+        padding: 0.5em;
+        border: 1px solid $border-color;
+      }
+      td:last-child {
+        ul {
+          display: flex;
+          flex-direction: column;
+          line-height: 2;
+          a {
+            color: $link-color;
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    p {
+      text-align: center;
+    }
+  }
+  .histories__form {
+    padding: 1em 0;
+  }
+}
+
+.histories__form {
+  width: 100%;
+  max-width: 400px;
+  padding: 1rem;
+  form {
+    padding: 1em;
+    border: 1px solid $border-color;
+    .form_group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2em;
+      margin-top: 0.5em;
+      // label {}
+      // input {}
+      // textarea {}
+      // input[type="submit"] {}
+    }
+  }
+}

@@ -31,8 +31,9 @@ class HistoriesController < ApplicationController
 
   def destroy
     @history = History.find(params[:id])
+    @blance = @history.blance
     @history.destroy
-    redirect_to blance_histories_url(@history.blance), notice: t(".notice")
+    redirect_to blance_index_history_url(@blance), notice: t(".notice")
   end
 
   private

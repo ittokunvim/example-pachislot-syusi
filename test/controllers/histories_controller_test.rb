@@ -60,6 +60,6 @@ class HistoriesControllerTest < ActionDispatch::IntegrationTest
     assert_difference("History.count", -1) do
       delete blance_history_url @blance, @history
     end
-    assert_redirected_to blance_histories_url @blance
+    assert_redirected_to blance_index_history_url(@blance)
   end
 end

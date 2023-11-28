@@ -8,10 +8,24 @@
   font-size: 0.8rem;
   margin-bottom: 1rem;
   padding: 1rem;
+  text-align: center;
   border-left: 4px solid $shared-flash-notice-color;
   color: $shared-flash-notice-color;
   background-color: $shared-flash-notice-background-color;
+}
+
+#flash_alert {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
   text-align: center;
+  border-left: 4px solid $shared-flash-alert-color;
+  color: $shared-flash-alert-color;
+  background-color: $shared-flash-alert-background-color;
 }
 
 #error_explanation {
