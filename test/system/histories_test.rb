@@ -8,10 +8,10 @@ class HistoriesTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     # no history
-    visit blance_index_history_url(blances(:most_recent))
+    visit blance_histories_url(blances(:most_recent))
     assert_text I18n.t("histories.index.no_history")
     # has history
-    visit blance_index_history_url(@blance)
+    visit blance_histories_url(@blance)
     excepted_columns = %w[id created_at updated_at blance_id]
     @histories.each do |history|
       history.attributes.each do |k, v|
@@ -28,7 +28,7 @@ class HistoriesTest < ApplicationSystemTestCase
   test "creating a History" do
     @history = @histories.first
     @history.memo = "testtest"
-    visit blance_index_history_url(@blance)
+    visit new_blance_history_url(@blance)
 
     # invalid input
     click_on I18n.t("histories.index.button_text")
@@ -64,7 +64,7 @@ class HistoriesTest < ApplicationSystemTestCase
   test "destroying a History" do
     @blance = blances(:two)
     @history = @blance.histories.first
-    visit blance_index_history_url(@blance)
+    visit blance_histories_url(@blance)
 
     click_on I18n.t("histories.history.destroy")
     assert_match page.driver.browser.switch_to.alert.text, I18n.t("histories.history.confirm")

@@ -13,9 +13,9 @@ class HistoriesController < ApplicationController
     @blance = Blance.find(params[:blance_id])
     @history = @blance.histories.build(history_params)
     if @history.save
-      redirect_to blance_index_history_url(@blance), notice: t(".notice")
+      redirect_to blance_histories_url(@blance), notice: t(".notice")
     else
-      redirect_to blance_index_history_url(@blance), alert: t(".alert"), status: :bad_request
+      redirect_to blance_histories_url(@blance), alert: t(".alert"), status: :bad_request
     end
   end
 
@@ -23,9 +23,9 @@ class HistoriesController < ApplicationController
     @history = History.find(params[:id])
     @blance = @history.blance
     if @history.update(history_params)
-      redirect_to blance_index_history_url(@blance), notice: t(".notice")
+      redirect_to blance_histories_url(@blance), notice: t(".notice")
     else
-      redirect_to blance_index_history_url(@blance), alert: t(".alert"), status: :bad_request
+      redirect_to blance_histories_url(@blance), alert: t(".alert"), status: :bad_request
     end
   end
 
@@ -33,7 +33,7 @@ class HistoriesController < ApplicationController
     @history = History.find(params[:id])
     @blance = @history.blance
     @history.destroy
-    redirect_to blance_index_history_url(@blance), notice: t(".notice")
+    redirect_to blance_histories_url(@blance), notice: t(".notice")
   end
 
   private
