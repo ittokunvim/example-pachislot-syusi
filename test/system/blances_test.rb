@@ -26,6 +26,7 @@ class BlancesTest < ApplicationSystemTestCase
       assert_text I18n.t("blances.index.operation")
       assert_link I18n.t("blances.index.show"), href: blance_path(blance)
       assert_link I18n.t("blances.index.edit"), href: edit_blance_path(blance)
+      assert_link I18n.t("blances.index.history"), href: blance_histories_path(blance)
     end
   end
 
@@ -53,6 +54,7 @@ class BlancesTest < ApplicationSystemTestCase
     assert_text I18n.t("blances.show.etc")
     assert_link I18n.t("blances.show.edit"), href: edit_blance_path(@blance)
     assert_link I18n.t("blances.show.delete"), href: blance_path(@blance)
+    assert_link I18n.t("blances.show.history"), href: blance_histories_path(@blance)
     assert_link I18n.t("defaults.back"), href: blances_path
   end
 
