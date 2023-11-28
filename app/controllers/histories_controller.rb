@@ -4,6 +4,11 @@ class HistoriesController < ApplicationController
     @histories = @blance.histories
   end
 
+  def new
+    @blance = Blance.find(params[:blance_id])
+    @history = @blance.histories.build
+  end
+
   def edit
     @history = History.find(params[:id])
     @blance = @history.blance
@@ -16,6 +21,7 @@ class HistoriesController < ApplicationController
       redirect_to blance_histories_url(@blance), notice: t(".notice")
     else
       redirect_to blance_histories_url(@blance), alert: t(".alert"), status: :bad_request
+      render("new", status: :bad_request)
     end
   end
 
@@ -26,6 +32,7 @@ class HistoriesController < ApplicationController
       redirect_to blance_histories_url(@blance), notice: t(".notice")
     else
       redirect_to blance_histories_url(@blance), alert: t(".alert"), status: :bad_request
+      render("edit", status: :bad_request)
     end
   end
 
