@@ -20,7 +20,6 @@ class HistoriesController < ApplicationController
     if @history.save
       redirect_to blance_histories_url(@blance), notice: t(".notice")
     else
-      redirect_to blance_histories_url(@blance), alert: t(".alert"), status: :bad_request
       render("new", status: :bad_request)
     end
   end
@@ -31,7 +30,6 @@ class HistoriesController < ApplicationController
     if @history.update(history_params)
       redirect_to blance_histories_url(@blance), notice: t(".notice")
     else
-      redirect_to blance_histories_url(@blance), alert: t(".alert"), status: :bad_request
       render("edit", status: :bad_request)
     end
   end
