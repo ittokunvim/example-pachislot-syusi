@@ -21,5 +21,7 @@
       <p><%= t(".no_history") %></p>
     </div>
   <% end %>
-  <%= link_to(t(".new_history"), new_blance_history_path, class: "new_history") %>
+  <div class="new_history">
+    <%= link_to(t(".new_history"), new_blance_history_path) %>
+  </div>
 </div>

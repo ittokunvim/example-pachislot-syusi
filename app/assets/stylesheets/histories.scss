@@ -52,8 +52,17 @@
       border: 1px solid $border-color;
     }
   }
-  .histories__form {
-    padding: 1em 0;
+  .new_history {
+    margin-top: 1rem;
+    a {
+      display: inline-block;
+      color: white;
+      background-color: $blances-form-submit-background-color;
+      text-decoration: none;
+      padding: 1em;
+      border: 1px solid black;
+      border-radius: 0.5em;
+    }
   }
 }
 
