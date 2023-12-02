@@ -88,6 +88,9 @@
       <%= link_to @blance, data: { turbo_method: :delete, turbo_confirm: t(".confirm") }, class: "delete" do %>
         <%= icon("fa-regular", "trash-alt", t(".delete")) %>
       <% end %>
+      <%= link_to blance_histories_path(@blance), class: "history" do %>
+        <%= icon("fa-solid", "book", t(".history")) %>
+      <% end %>
       <%= link_to blances_path, class: "back" do %>
         <%= icon("fa-solid", "arrow-left", t("defaults.back")) %>
       <% end %>

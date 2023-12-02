@@ -13,7 +13,7 @@ class HistoriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get blance_index_history_url @blance
+    get blance_histories_url @blance
     assert_response :success
     assert_select "title", @page_title + I18n.t("histories.index.title", date: I18n.l(@blance.date))
   end
@@ -44,7 +44,7 @@ class HistoriesControllerTest < ActionDispatch::IntegrationTest
       patch blance_history_url @blance, @history, params: { history: @history_hash }
       @history.reload
     end
-    assert_redirected_to blance_index_history_url(@blance)
+    assert_redirected_to blance_histories_url(@blance)
   end
 
   test "should return bad_request when patch update" do
@@ -60,6 +60,6 @@ class HistoriesControllerTest < ActionDispatch::IntegrationTest
     assert_difference("History.count", -1) do
       delete blance_history_url @blance, @history
     end
-    assert_redirected_to blance_index_history_url(@blance)
+    assert_redirected_to blance_histories_url(@blance)
   end
 end

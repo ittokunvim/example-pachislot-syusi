@@ -1,5 +1,7 @@
 <div class="histories__form">
   <%= form_with model: [@blance, history], local: true do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
     <div class="form_group">
       <%= f.label :game_count %>
       <%= f.number_field :game_count %>

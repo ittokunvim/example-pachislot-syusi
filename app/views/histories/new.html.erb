@@ -1,0 +1,6 @@
+<% content_for(:title, t(".title", date: l(@blance.date))) %>
+<% provide(:button_text, t(".button_text")) %>
+
+<div class="histories__new">
+  <%= render "form", { history: @history } %>
+</div>

@@ -13,6 +13,7 @@ ja:
       operation: "操作"
       show: "閲覧する"
       edit: "編集する"
+      history: "遊技履歴"
     new:
       title: "収支作成"
       button_text: "収支を作成"
@@ -26,6 +27,7 @@ ja:
       operation: "操作"
       edit: "編集する"
       delete: "削除する"
+      history: "遊技履歴"
       confirm: "本当に収支を削除してよろしいでしょうか？"
     create:
       notice: "収支を作成しました"
@@ -45,6 +47,9 @@ ja:
       title: "%{date}の遊戯履歴"
       operation: "操作"
       no_history: "遊技履歴は保存されていません"
+      new_history: "遊技履歴を作成する"
+    new:
+      title: "%{date}の履歴作成"
       button_text: "遊技履歴を作成"
     edit:
       title: "%{date}の履歴編集"

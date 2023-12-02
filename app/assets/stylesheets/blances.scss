@@ -42,7 +42,12 @@
           }
           &:nth-child(even) {
             background-color: $list-even-background-color;
-            border-top: 1px solid $border-color; }
+            border-top: 1px solid $border-color;
+            border-bottom: 1px solid $border-color;
+            &:last-child {
+              border-bottom: none;
+            }
+          }
         }
       }
     }
@@ -103,6 +108,7 @@
   .links {
     font-size: 0.9rem;
     display: inline-block;
+    margin-top: 1rem;
     border: 1px solid $border-color;
     border-radius: 0.5em;
 
@@ -137,6 +143,11 @@
         &.delete:hover {
           color: white;
           background-color: $blances-show-delete-background-color;
+        }
+
+        &.history:hover {
+          color: white;
+          background-color: $blances-show-history-background-color;
         }
 
         &.back:hover {
