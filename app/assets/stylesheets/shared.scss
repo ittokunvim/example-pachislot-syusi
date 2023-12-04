@@ -9,9 +9,9 @@
   margin-bottom: 1rem;
   padding: 1rem;
   text-align: center;
-  border-left: 4px solid $shared-flash-notice-color;
-  color: $shared-flash-notice-color;
-  background-color: $shared-flash-notice-background-color;
+  border-left: 4px solid $color-text-notice;
+  color: $color-text-notice;
+  background-color: $color-background-notice;
 }
 
 #flash_alert {
@@ -23,9 +23,9 @@
   margin-bottom: 1rem;
   padding: 1rem;
   text-align: center;
-  border-left: 4px solid $shared-flash-alert-color;
-  color: $shared-flash-alert-color;
-  background-color: $shared-flash-alert-background-color;
+  border-left: 4px solid $color-text-alert;
+  color: $color-text-alert;
+  background-color: $color-background-alert;
 }
 
 #error_explanation {
@@ -35,10 +35,10 @@
   align-items: flex-start;
   font-size: 0.8rem;
   padding: 1rem;
-  border: 1px solid $shared-error-explanation-color;
+  border: 1px solid $color-text-alert;
   border-radius: 0.5em;
-  color: $shared-error-explanation-color;
-  background-color: $shared-error-explanation-background-color;
+  color: $color-text-alert;
+  background-color: $color-background-alert;
 }
 
 #error_explanation ul {

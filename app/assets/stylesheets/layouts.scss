@@ -5,9 +5,9 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: $layouts-header-background-color;
+  background-color: inherit;
   padding: 0 0.5rem;
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid $color-border-primary;
 }
 
 .layouts__header .logo img {
@@ -33,7 +33,7 @@
   position: absolute;
   background-color: white;
   margin-top: 1em;
-  border: 1px solid $border-color;
+  border: 1px solid $color-border-primary;
   min-width: 100px;
   right: 0;
   z-index: 1;
@@ -58,7 +58,7 @@
   top: -17px;
   left: 50px;
   border-style: solid;
-  border-color: transparent transparent $border-color transparent;
+  border-color: transparent transparent $color-border-primary transparent;
   border-width: 0px 11px 17px 11px;
 }
 
@@ -80,7 +80,7 @@
 }
 
 .layouts__header .links .dropdown a:hover {
-  color: $link-color;
+  color: $color-text-link;
 }
 
 .layouts__main {
@@ -88,9 +88,9 @@
 }
 
 .layouts__footer {
-  background-color: $layouts-footer-background-color;
+  background-color: inherit;
   padding: 0 0.5rem;
-  border-top: 1px solid $border-color;
+  border-top: 1px solid $color-border-primary;
 }
 
 .layouts__footer .technologys {
@@ -105,7 +105,7 @@
 }
 
 .layouts__footer .technologys a {
-  color: $link-color;
+  color: $color-text-link;
   text-decoration: none;
 }
 

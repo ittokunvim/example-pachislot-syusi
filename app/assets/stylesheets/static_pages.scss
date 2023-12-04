@@ -3,7 +3,7 @@
 .staticpage__home {
   .top {
     position: relative;
-    background-color: $staticpages-home-background-color;
+    background-color: $color-background-dark;
 
     img {
       width: 100%;
@@ -35,7 +35,7 @@
         text-decoration: none;
         padding: 0.6em;
         border: 1px solid black;
-        background: $staticpages-home-blance-background-color;
+        background: $color-button-success;
         border-radius: 0.5em;
       }
 
