@@ -44,11 +44,12 @@
 #error_explanation ul {
   margin: 0;
   padding-left: 1em;
-  list-style: circle;
-  line-height: 2;
+  list-style: upper-roman;
+  line-height: 3;
 }
 
 #flash_notice .fa-xmark,
 #error_explanation .fa-xmark {
+  font-size: 1rem;
   cursor: pointer;
 }
