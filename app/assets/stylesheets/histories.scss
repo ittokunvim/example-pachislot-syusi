@@ -15,7 +15,7 @@
       min-width: 80px;
       max-width: 200px;
       padding: 0.5em;
-      border: 1px solid $border-color;
+      border: 1px solid $color-border-primary;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -29,15 +29,15 @@
         padding: 0;
         line-height: 2;
         a {
-          color: $link-color;
+          color: $color-text-link;
           text-decoration: none;
           padding: 0.25em 0.5em;
           &:hover {
             text-decoration: underline;
           }
           &:nth-child(even) {
-            background-color: $list-even-background-color;
-            border-top: 1px solid $border-color;
+            background-color: $color-background-secondary;
+            border-top: 1px solid $color-border-primary;
           }
         }
       }
@@ -49,19 +49,45 @@
     p {
       display: inline-block;
       padding: 1em;
-      border: 1px solid $border-color;
+      border: 1px solid $color-border-primary;
     }
   }
   .new_history {
     margin-top: 1rem;
     a {
+      appearance: button;
+      background-color: #000;
+      background-image: none;
+      border: 1px solid #000;
+      border-radius: 4px;
+      box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+      box-sizing: border-box;
+      color: #fff;
+      cursor: pointer;
       display: inline-block;
-      color: white;
-      background-color: $blances-form-submit-background-color;
+      font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      margin: 0 5px 10px 0;
+      overflow: visible;
+      padding: 12px 12px;
+      text-align: center;
+      text-transform: none;
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
+      vertical-align: middle;
+      white-space: nowrap;
       text-decoration: none;
-      padding: 1em;
-      border: 1px solid black;
-      border-radius: 0.5em;
+      &:hover {
+        box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+        outline: 0;
+      }
+      &:not([disabled]):hover {
+        box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+        transform: translate(2px, 2px);
+      }
     }
   }
 }
@@ -72,7 +98,7 @@
   padding: 1rem;
   form {
     padding: 1em;
-    border: 1px solid $border-color;
+    border: 1px solid $color-border-primary;
     border-radius: 0.5em;
     .form_group {
       display: flex;
@@ -88,12 +114,12 @@
         box-sizing: border-box;
         width: 100%;
         padding: 0.25em;
-        border: 1px solid $border-color;
+        border: 1px solid $color-border-primary;
         border-radius: 0.2em;
         letter-spacing: 1px;
         word-spacing: 2px;
-        background-color: $base-background-color;
-        color: $base-color;
+        background-color: $color-background-input;
+        color: $color-text-primary;
       }
     }
     textarea {
@@ -106,7 +132,7 @@
       padding: 0.5em 1em;
       border: 1px solid black;
       border-radius: 0.5em;
-      background-color: $blances-form-submit-background-color;
+      background-color: $color-button-success;
       color: white;
     }
   }

@@ -17,7 +17,7 @@
       min-width: 80px;
       max-width: 200px;
       padding: 0.5em;
-      border: 1px solid $border-color;
+      border: 1px solid $color-border-primary;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -33,7 +33,7 @@
         line-height: 2;
 
         a {
-          color: $link-color;
+          color: $color-text-link;
           text-decoration: none;
           padding: 0.25em 0.5em;
 
@@ -41,9 +41,9 @@
             text-decoration: underline;
           }
           &:nth-child(even) {
-            background-color: $list-even-background-color;
-            border-top: 1px solid $border-color;
-            border-bottom: 1px solid $border-color;
+            background-color: $color-background-secondary;
+            border-top: 1px solid $color-border-primary;
+            border-bottom: 1px solid $color-border-primary;
             &:last-child {
               border-bottom: none;
             }
@@ -66,7 +66,7 @@
 
   table {
     width: 100%;
-    border: 1px solid $border-color;
+    border: 1px solid $color-border-primary;
     border-collapse: collapse;
 
     th,
@@ -76,10 +76,11 @@
     }
 
     th {
-      color: $text-gray-color;
+      color: $color-text-secondary;
+      min-width: 200px;
       &.headline {
         color: black;
-        background-color: $blances-show-headline-background-color;
+        background-color: $color-background-secondary;
         text-align: left;
       }
     }
@@ -92,7 +93,7 @@
 
   .datetimes {
     font-size: 0.8rem;
-    color: $text-gray-color;
+    color: $color-text-secondary;
 
     ul {
       display: flex;
@@ -109,7 +110,7 @@
     font-size: 0.9rem;
     display: inline-block;
     margin-top: 1rem;
-    border: 1px solid $border-color;
+    border: 1px solid $color-border-primary;
     border-radius: 0.5em;
 
     ul {
@@ -122,8 +123,12 @@
         display: block;
         padding: 0.5em 1em;
         text-decoration: none;
-        color: $base-color;
+        color: $color-text-primary;
         transition: all 0.2s ease-out;
+
+        &:hover {
+          background-color: $color-background-secondary;
+        }
 
         &:first-child {
           border-top-left-radius: 0.5em;
@@ -133,26 +138,6 @@
         &:last-child {
           border-bottom-left-radius: 0.5em;
           border-bottom-right-radius: 0.5em;
-        }
-
-        &.edit:hover {
-          color: white;
-          background-color: $blances-show-edit-background-color;
-        }
-
-        &.delete:hover {
-          color: white;
-          background-color: $blances-show-delete-background-color;
-        }
-
-        &.history:hover {
-          color: white;
-          background-color: $blances-show-history-background-color;
-        }
-
-        &.back:hover {
-          color: white;
-          background-color: $blances-show-back-background-color;
         }
       }
     }
@@ -170,7 +155,7 @@
 
   form {
     padding: 1em;
-    border: 1px solid $border-color;
+    border: 1px solid $color-border-primary;
     border-radius: 0.5em;
 
     .form_group {
@@ -190,12 +175,12 @@
         box-sizing: border-box;
         width: 100%;
         padding: 0.5em;
-        border: 1px solid $blances-form-border-color;
+        border: 1px solid $color-border-primary;
         border-radius: 0.2em;
         letter-spacing: 1px;
         word-spacing: 2px;
-        background-color: $base-background-color;
-        color: $base-color;
+        background-color: $color-background-input;
+        color: $color-text-primary;
       }
 
       textarea {
@@ -207,7 +192,7 @@
         input,
         select,
         textarea {
-          border: 1px solid $blances-form-error-border-color;
+          border: 1px solid $color-border-alert;
         }
       }
     }
@@ -219,7 +204,7 @@
       padding: 0.5em 1em;
       border: 1px solid black;
       border-radius: 0.5em;
-      background-color: $blances-form-submit-background-color;
+      background-color: $color-button-success;
       color: white;
     }
 
