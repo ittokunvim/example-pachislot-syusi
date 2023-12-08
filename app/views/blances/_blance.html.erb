@@ -1,0 +1,10 @@
+日付：<%= l(blance.date) %>
+結果：<%= blance.result %>円
+投資合計：<%= blance.total_investment_money %>円
+回収合計：<%= blance.total_recovery_money %>円
+機種名：<%= blance.name %>
+店舗名：<%= blance.store %>
+<%= link_to t(".show"), blance %>
+<%= link_to t(".edit"), edit_blance_path(blance) %>
+<%= link_to t(".destroy"), @blance, data: { turbo_method: :delete, turbo_confirm: t(".confirm") } %>
+<%= link_to t(".history"), blance_histories_path(blance) %>

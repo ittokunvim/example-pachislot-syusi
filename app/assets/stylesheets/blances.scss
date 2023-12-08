@@ -5,53 +5,7 @@
 //
 .blances__list {
   font-size: 0.8rem;
-  overflow-x: auto;
   padding: 1rem;
-
-  table {
-    width: max-content;
-    border-collapse: collapse;
-
-    th,
-    td {
-      min-width: 80px;
-      max-width: 200px;
-      padding: 0.5em;
-      border: 1px solid $color-border-primary;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    td:last-child {
-      padding: 0;
-
-      ul {
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-        padding: 0;
-        line-height: 2;
-
-        a {
-          color: $color-text-link;
-          text-decoration: none;
-          padding: 0.25em 0.5em;
-
-          &:hover {
-            text-decoration: underline;
-          }
-          &:nth-child(even) {
-            background-color: $color-background-secondary;
-            border-top: 1px solid $color-border-primary;
-            border-bottom: 1px solid $color-border-primary;
-            &:last-child {
-              border-bottom: none;
-            }
-          }
-        }
-      }
-    }
-  }
 }
 
 //

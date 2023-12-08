@@ -33,6 +33,20 @@ class Blance < ApplicationRecord
     result.round
   end
 
+  def total_investment_money
+    investment_money = self.investment_money.to_i
+    rate = self.rate.to_f
+    investment_saving = self.investment_saving.to_i * rate
+    (investment_money + investment_saving).round
+  end
+
+  def total_recovery_money
+    recovery_money = self.recovery_money.to_i
+    rate = self.rate.to_f
+    recovery_saving = self.recovery_saving.to_i * rate
+    (recovery_money + recovery_saving).round
+  end
+
   def sort_histories
     return histories if history_order.order.blank?
 
