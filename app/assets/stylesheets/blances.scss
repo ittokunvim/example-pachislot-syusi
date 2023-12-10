@@ -3,9 +3,13 @@
 //
 // index
 //
-.blances__list {
-  font-size: 0.8rem;
+.blances__index {
   padding: 1rem;
+  .list {
+  }
+  .new_blance {
+    margin-top: 1em;
+  }
 }
 
 //
@@ -93,6 +97,38 @@
           border-bottom-left-radius: 0.5em;
           border-bottom-right-radius: 0.5em;
         }
+      }
+    }
+  }
+}
+
+//
+// blance
+//
+.blances__blance {
+  > * {
+    span {
+    }
+  }
+  .date {
+  }
+  .result {
+    &.plus {
+    }
+    &.minus {
+    }
+  }
+  .investment {
+  }
+  .recovery {
+  }
+  .name {
+  }
+  .store {
+  }
+  .links {
+    a {
+      &:hover {
       }
     }
   }

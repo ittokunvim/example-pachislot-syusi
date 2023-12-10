@@ -21,7 +21,7 @@ services:
 
   selenium:
     image: seleniarm/standalone-chromium
-    shm_size: 512m
+    shm_size: 2g
     ports:
       - "7900:7900"
 

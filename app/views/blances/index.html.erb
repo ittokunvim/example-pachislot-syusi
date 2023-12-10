@@ -2,12 +2,13 @@
 
 <% content_for(:title, t(".title")) %>
 
-<div class="blances__list">
-  <pre>
-  <code>
-<% @blances.each do |blance| %>
-<%= render "blance", blance: blance %>
-<% end %>
-  </code>
-  </pre>
+<div class="blances__index">
+  <div class="list">
+    <% @blances.each do |blance| %>
+      <%= render "blance", blance: blance %>
+    <% end %>
+  </div>
+  <div class="new_blance">
+    <%= link_to t(".new_blance"), new_blance_path %>
+  </div>
 </div>
