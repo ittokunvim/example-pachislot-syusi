@@ -1,6 +1,6 @@
 <div class="blances__blance" data-controller="blances">
   <div class="date"><%= t(".date", date: l(blance.date)) %></div>
-  <div class="result" data-target="blances.result"><%= blance.result %></div>
+  <div class="result" data-blances-target="result"><%= blance.result %></div>
   <div class="investment"><%= t(".investment") %><span><%= blance.total_investment_money %></span></div>
   <div class="recovery"><%= t(".recovery") %><span><%= blance.total_recovery_money %></span></div>
   <div class="name"><%= t(".name") %><span><%= blance.name %></span></div>

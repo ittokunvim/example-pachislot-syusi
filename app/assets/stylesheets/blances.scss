@@ -6,6 +6,9 @@
 .blances__index {
   padding: 1rem;
   .list {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
   }
   .new_blance {
     margin-top: 1em;
@@ -23,6 +26,7 @@
   padding: 1rem;
 
   table {
+    table-layout: fixed;
     width: 100%;
     border: 1px solid $color-border-primary;
     border-collapse: collapse;
@@ -106,29 +110,77 @@
 // blance
 //
 .blances__blance {
+  font-size: 0.8em;
+  display: grid;
+  grid-template-areas:
+    "date date"
+    "result investment"
+    "result recovery"
+    "store name"
+    "links links";
+  grid-template-columns: 200px 1fr;
+  border: 1px solid $color-border-primary;
   > * {
+    color: $color-text-secondary;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0.5em 0.25em;
     span {
+      color: $color-text-primary;
+      padding-left: 0.5em;
     }
   }
   .date {
+    grid-area: date;
+    font-weight: bold;
+    padding-left: 1em;
+    color: $color-text-primary;
+    background-color: $color-background-secondary;
   }
   .result {
+    grid-area: result;
+    font-size: 1.6em;
+    line-height: 2;
+    background-color: $color-background-blue;
+    padding-left: 0.5em;
+    &.zero {
+      color: $color-text-primary;
+    }
     &.plus {
+      color: $color-text-success;
     }
     &.minus {
+      color: $color-text-alert;
     }
   }
   .investment {
+    grid-area: investment;
+    border-bottom: 1px solid $color-border-primary;
   }
   .recovery {
+    grid-area: recovery;
   }
   .name {
+    grid-area: name;
+    font-size: 0.9em;
   }
   .store {
+    grid-area: store;
+    font-size: 0.9em;
   }
   .links {
+    grid-area: links;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-top: 1px solid $color-border-primary;
     a {
+      color: $color-text-link;
+      text-decoration: none;
       &:hover {
+        text-decoration: underline;
       }
     }
   }
