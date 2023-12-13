@@ -145,6 +145,42 @@ class BlanceTest < ActiveSupport::TestCase
     assert_equal 0, blance.result
   end
 
+  test "total_investment_money() should be correct (rate: 21.73)" do
+    blance = Blance.new(
+      investment_money: 10_000,
+      investment_saving: 460,
+      rate: 21.73
+    )
+    assert_equal 19_996, blance.total_investment_money
+  end
+
+  test "total_investment_money() should be return 0" do
+    blance = Blance.new(
+      investment_money: nil,
+      investment_saving: nil,
+      rate: nil
+    )
+    assert_equal 0, blance.total_investment_money
+  end
+
+  test "total_recovery_money() should be correct (rate: 21.73)" do
+    blance = Blance.new(
+      recovery_money: 10_000,
+      recovery_saving: 460,
+      rate: 21.73
+    )
+    assert_equal 19_996, blance.total_recovery_money
+  end
+
+  test "total_recovery_money() should be return 0" do
+    blance = Blance.new(
+      recovery_money: nil,
+      recovery_saving: nil,
+      rate: nil
+    )
+    assert_equal 0, blance.total_recovery_money
+  end
+
   test "sort_histories() returns an arbitrarily ordered histories" do
     order = @blance.history_order.order
     assert_equal order.split(",").map(&:to_i), @blance.sort_histories.map(&:id)

@@ -2,49 +2,13 @@
 
 <% content_for(:title, t(".title")) %>
 
-<div class="blances__list">
-  <table>
-    <thead>
-      <tr>
-        <th><%= Blance.human_attribute_name(:date) %></th>
-        <th><%= Blance.human_attribute_name(:category) %></th>
-        <th><%= Blance.human_attribute_name(:investment_money) %></th>
-        <th><%= Blance.human_attribute_name(:recovery_money) %></th>
-        <th><%= Blance.human_attribute_name(:investment_saving) %></th>
-        <th><%= Blance.human_attribute_name(:recovery_saving) %></th>
-        <th><%= Blance.human_attribute_name(:rate) %></th>
-        <th><%= Blance.human_attribute_name(:result) %></th>
-        <th><%= Blance.human_attribute_name(:name) %></th>
-        <th><%= Blance.human_attribute_name(:store) %></th>
-        <th><%= Blance.human_attribute_name(:created_at) %></th>
-        <th><%= Blance.human_attribute_name(:updated_at) %></th>
-        <th><%= t(".operation") %></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @blances.each do |blance| %>
-        <tr>
-          <td><%= l(blance.date) %></td>
-          <td><%= blance.category %></td>
-          <td><%= blance.investment_money || 0 %></td>
-          <td><%= blance.recovery_money || 0 %></td>
-          <td><%= blance.investment_saving || 0 %></td>
-          <td><%= blance.recovery_saving || 0 %></td>
-          <td><%= blance.rate %></td>
-          <td><%= blance.result || 0 %></td>
-          <td><%= blance.name %></td>
-          <td><%= blance.store %></td>
-          <td><%= t("defaults.ago", time: time_ago_in_words(blance.created_at)) %></td>
-          <td><%= t("defaults.ago", time: time_ago_in_words(blance.updated_at)) %></td>
-          <td>
-            <ul>
-              <%= link_to(t(".show"), blance_path(blance)) %>
-              <%= link_to(t(".edit"), edit_blance_path(blance)) %>
-              <%= link_to(t(".history"), blance_histories_path(blance)) %>
-            </ul>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<div class="blances__index">
+  <div class="list">
+    <% @blances.each do |blance| %>
+      <%= render "blance", blance: blance %>
+    <% end %>
+  </div>
+  <div class="new_blance">
+    <%= link_to t(".new_blance"), new_blance_path, class: "creation-link-btn" %>
+  </div>
 </div>
