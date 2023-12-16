@@ -1,6 +1,8 @@
 require "application_system_test_case"
 
 class BlancesTest < ApplicationSystemTestCase
+  include BlancesHelper
+
   setup do
     @blance = blances(:one)
   end
@@ -10,7 +12,7 @@ class BlancesTest < ApplicationSystemTestCase
 
     Blance.find_each do |blance|
       assert_text I18n.t("blances.blance.date", date: I18n.l(blance.date))
-      blance.result.positive? ? assert_text("+#{blance.result}") : assert_text(blance.result)
+      assert_text display_money(blance.result)
       assert_text blance.total_investment_money
       assert_text blance.total_recovery_money
       assert_text blance.store || ""
@@ -49,6 +51,7 @@ class BlancesTest < ApplicationSystemTestCase
     assert_text I18n.t("blances.show.machine")
     assert_text I18n.t("blances.show.store")
     assert_text I18n.t("blances.show.etc")
+    assert_text I18n.t("blances.show.result")
     assert_link I18n.t("blances.show.edit"), href: edit_blance_path(@blance)
     assert_link I18n.t("blances.show.delete"), href: blance_path(@blance)
     assert_link I18n.t("blances.show.history"), href: blance_histories_path(@blance)

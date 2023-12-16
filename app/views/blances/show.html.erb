@@ -20,27 +20,23 @@
     </tr>
     <tr>
       <th><%= Blance.human_attribute_name(:investment_money) %></th>
-      <td><%= @blance.investment_money || 0 %></td>
+      <td><%= display_money(@blance.investment_money) %></td>
     </tr>
     <tr>
       <th><%= Blance.human_attribute_name(:recovery_money) %></th>
-      <td><%= @blance.recovery_money || 0 %></td>
+      <td><%= display_money(@blance.recovery_money) %></td>
     </tr>
     <tr>
       <th><%= Blance.human_attribute_name(:investment_saving) %></th>
-      <td><%= @blance.investment_saving || 0 %></td>
+      <td><%= show_display_saving(@blance.investment_saving, @blance.rate) %></td>
     </tr>
     <tr>
       <th><%= Blance.human_attribute_name(:recovery_saving) %></th>
-      <td><%= @blance.recovery_saving || 0 %></td>
+      <td><%= show_display_saving(@blance.recovery_saving, @blance.rate) %></td>
     </tr>
     <tr>
       <th><%= Blance.human_attribute_name(:rate) %></th>
-      <td><%= @blance.rate || 0 %></td>
-    </tr>
-    <tr>
-      <th><%= Blance.human_attribute_name(:result) %></th>
-      <td><%= @blance.result %></td>
+      <td><%= show_display_rate(@blance.rate) %></td>
     </tr>
     <tr>
       <th colspan="2" class="headline">
@@ -72,6 +68,15 @@
     <tr>
       <th><%= Blance.human_attribute_name(:note) %></th>
       <td><%= @blance.note %></td>
+    </tr>
+    <tr>
+      <th colspan="2" class="headline">
+        <%= icon("fa-solid", "square-poll-vertical", t(".result")) %>
+      </th>
+    </tr>
+    <tr>
+      <th><%= Blance.human_attribute_name(:result) %></th>
+      <td><%= display_money(@blance.result) %></td>
     </tr>
   </table>
   <div class="datetimes">
