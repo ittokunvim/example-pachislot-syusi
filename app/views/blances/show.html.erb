@@ -2,7 +2,7 @@
 
 <% content_for(:title, t(".title", date: l(@blance.date))) %>
 
-<div class="blances__show">
+<div class="blances__show" data-controller="blances">
   <table>
     <tr>
       <th colspan="2" class="headline">
@@ -76,7 +76,7 @@
     </tr>
     <tr>
       <th><%= Blance.human_attribute_name(:result) %></th>
-      <td><%= display_money(@blance.result) %></td>
+      <td data-blances-target="result"><%= display_money(@blance.result) %></td>
     </tr>
   </table>
   <div class="datetimes">
