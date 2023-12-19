@@ -87,17 +87,14 @@
   </div>
   <div class="links">
     <ul>
-      <%= link_to edit_blance_path(@blance), class: "edit" do %>
-        <%= icon("fa-regular", "edit", t(".edit")) %>
+      <%= link_to edit_blance_path(@blance) do %>
+        <%= icon("fa-regular", "edit", t(".edit_blance")) %>
       <% end %>
-      <%= link_to @blance, data: { turbo_method: :delete, turbo_confirm: t(".confirm") }, class: "delete" do %>
-        <%= icon("fa-regular", "trash-alt", t(".delete")) %>
+      <%= link_to blance_histories_path(@blance) do %>
+        <%= icon("fa-solid", "book", t(".show_history")) %>
       <% end %>
-      <%= link_to blance_histories_path(@blance), class: "history" do %>
-        <%= icon("fa-solid", "book", t(".history")) %>
-      <% end %>
-      <%= link_to blances_path, class: "back" do %>
-        <%= icon("fa-solid", "arrow-left", t("defaults.back")) %>
+      <%= link_to @blance, data: { turbo_method: :delete, turbo_confirm: t(".confirm") } do %>
+        <%= icon("fa-regular", "trash-alt", t(".delete_blance")) %>
       <% end %>
     </ul>
   </div>

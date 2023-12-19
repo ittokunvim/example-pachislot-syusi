@@ -67,7 +67,6 @@ class BlancesTest < ApplicationSystemTestCase
     assert_link I18n.t("blances.show.edit"), href: edit_blance_path(@blance)
     assert_link I18n.t("blances.show.delete"), href: blance_path(@blance)
     assert_link I18n.t("blances.show.history"), href: blance_histories_path(@blance)
-    assert_link I18n.t("defaults.back"), href: blances_path
   end
 
   test "creating a Blance" do

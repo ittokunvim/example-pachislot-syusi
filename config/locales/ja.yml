@@ -3,7 +3,6 @@ ja:
     ago: "%{time}前"
     created: "%{date}に作成"
     updated: "%{date}に更新"
-    back: "戻る"
   blances:
     blance:
       date: "%{date}の収支"
@@ -34,9 +33,9 @@ ja:
       store: "店舗"
       etc: "その他"
       result: "結果"
-      edit: "編集する"
-      delete: "削除する"
-      history: "遊技履歴"
+      edit_blance: "収支を編集する"
+      show_history: "遊技履歴を見る"
+      delete_blance: "収支を削除する"
       confirm: "本当に収支を削除してよろしいでしょうか？"
     create:
       notice: "収支を作成しました"

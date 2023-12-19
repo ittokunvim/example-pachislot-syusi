@@ -24,39 +24,46 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 1rem;
-
   table {
-    table-layout: fixed;
     width: 100%;
     border: 1px solid $color-border-primary;
     border-collapse: collapse;
-
     th,
     td {
       padding: 0.5em;
       vertical-align: top;
     }
-
     th {
       color: $color-text-secondary;
-      min-width: 200px;
+      width: 30%;
+      text-align: left;
+      padding-left: 1.5em;
       &.headline {
-        color: black;
-        background-color: $color-background-secondary;
-        text-align: left;
+        color: $color-text-primary;
+        background-color: $color-background-blue;
+        padding-left: 1em;
       }
     }
-
-    td:last-child {
-      word-wrap: break-word;
-      white-space: pre-wrap;
+    td {
+      color: $color-text-primary;
+      width: 70%;
+      text-align: left;
+      background-color: $color-background-primary;
+      &.plus {
+        color: $color-text-success;
+      }
+      &.minus {
+        color: $color-text-alert;
+      }
+      &:last-child {
+        word-wrap: break-word;
+        white-space: pre-wrap;
+      }
     }
   }
-
   .datetimes {
     font-size: 0.8rem;
     color: $color-text-secondary;
-
     ul {
       display: flex;
       flex-direction: row;
@@ -67,39 +74,25 @@
       list-style: none;
     }
   }
-
   .links {
-    font-size: 0.9rem;
-    display: inline-block;
+    font-size: 0.8rem;
     margin-top: 1rem;
-    border: 1px solid $color-border-primary;
-    border-radius: 0.5em;
-
+    padding: 1em 0;
+    border-top: 1px solid $color-border-primary;
     ul {
       display: flex;
       flex-direction: column;
+      gap: 1em;
       margin: 0;
       padding: 0;
-
       a {
-        display: block;
-        padding: 0.5em 1em;
+        width: fit-content;
         text-decoration: none;
         color: $color-text-primary;
         transition: all 0.2s ease-out;
-
         &:hover {
-          background-color: $color-background-secondary;
-        }
-
-        &:first-child {
-          border-top-left-radius: 0.5em;
-          border-top-right-radius: 0.5em;
-        }
-
-        &:last-child {
-          border-bottom-left-radius: 0.5em;
-          border-bottom-right-radius: 0.5em;
+          color: $color-text-link;
+          text-decoration: underline;
         }
       }
     }
