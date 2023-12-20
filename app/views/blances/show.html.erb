@@ -76,7 +76,7 @@
     </tr>
     <tr>
       <th><%= Blance.human_attribute_name(:result) %></th>
-      <td data-blances-target="result"><%= display_money(@blance.result) %></td>
+      <td id="result"><%= display_money(@blance.result) %></td>
     </tr>
   </table>
   <div class="datetimes">
@@ -99,3 +99,20 @@
     </ul>
   </div>
 </div>
+
+<script>
+  const results = document.querySelectorAll("#result");
+  results.forEach((result) => {
+    const resultTextLength = result.textContent.replaceAll(/\+/g, "").length;
+    const resultText = result.textContent.replaceAll(/,|円/g, "");
+    const resultNum = Number(resultText);
+    if (resultNum === 0) {
+      result.classList.add("zero");
+    } else if (resultNum > 0) {
+      result.textContent = result.textContent.padStart(resultTextLength + 1, "+");
+      result.classList.add("plus");
+    } else {
+      result.classList.add("minus");
+    }
+  });
+</script>
