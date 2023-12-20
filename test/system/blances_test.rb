@@ -80,6 +80,7 @@ class BlancesTest < ApplicationSystemTestCase
     fill_in I18n.t("activerecord.attributes.blance.date"), with: @blance.date
     select @blance.category, from: I18n.t("activerecord.attributes.blance.category")
     fill_in I18n.t("activerecord.attributes.blance.name"), with: blance_name
+    assert_selector "option"
     fill_in I18n.t("activerecord.attributes.blance.investment_money"), with: @blance.investment_money
     fill_in I18n.t("activerecord.attributes.blance.recovery_money"), with: @blance.recovery_money
     fill_in I18n.t("activerecord.attributes.blance.investment_saving"), with: @blance.investment_saving

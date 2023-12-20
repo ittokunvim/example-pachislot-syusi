@@ -12,7 +12,9 @@
     </div>
     <div class="form_group">
       <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, list: "names" %>
+      <datalist id="names">
+      </datalist>
     </div>
     <div class="form_group">
       <%= f.label :investment_money %>
@@ -45,3 +47,41 @@
     <%= f.submit yield(:button_text) %>
   <% end %>
 </div>
+
+<script>
+  [
+    "スマスロ北斗の拳",
+    "パチスロ甲鉄城のカバネリ",
+    "マイジャグラーⅤ",
+    "ゴーゴージャグラー3",
+    "アイムジャグラーEX",
+    "ファンキージャグラー2",
+    "ハッピージャグラーVⅢ",
+    "スマスロバジリスク～甲賀忍法帖～絆2 天膳 BLACK EDITION",
+    "マジカルハロウィン８",
+    "パチスロ交響詩篇エウレカセブン HI-EVOLUTION ZERO TYPE-ART",
+    "L戦国乙女4 戦乱に閃く炯眼の軍師",
+    "パチスロ 革命機ヴァルヴレイヴ",
+    "パチスロ からくりサーカス",
+    "L主役は銭形4",
+    "回胴式遊技機 グランベルム",
+    "パチスロ炎炎ノ消防隊",
+    "パチスロ傷物語 始マリノ刻",
+    "スマスロ転生したらスライムだった件",
+    "パチスロコードギアス反逆のルルーシュ3 C.C.&Kallen ver.",
+    "パチスロ バイオハザード RE:2",
+    "パチスロ モンスターハンターワールド：アイスボーンTM",
+    "パチスロ 新鬼武者2",
+    "パチスロ機動戦士ガンダムユニコーン",
+    "スマスロ バイオハザード:ヴェンデッタ",
+    "パチスロ頭文字D",
+    "キングハナハナ-30",
+    "ハナハナホウオウ～天翔～",
+    "パチスロディスクアップ2",
+    "バーサスリヴァイズ",
+  ].forEach(name => {
+    const option = document.createElement("option");
+    option.value = name;
+    document.getElementById("names").appendChild(option);
+  });
+</script>
