@@ -6,11 +6,14 @@ export default class extends Controller {
 
   connect() {
     const result = this.resultTarget;
-    const resultNum = Number(result.textContent);
+    const resultTextLength = result.textContent.replaceAll(/\+/g, "").length;
+    const resultText = result.textContent.replaceAll(/,|円/g, "");
+    const resultNum = Number(resultText);
+
     if (resultNum === 0) {
       this.resultTarget.classList.add("zero");
     } else if (resultNum > 0) {
-      result.textContent = `+${resultNum}`;
+      result.textContent = result.textContent.padStart(resultTextLength + 1, "+");
       this.resultTarget.classList.add("plus");
     } else {
       this.resultTarget.classList.add("minus");

@@ -1,6 +1,8 @@
 require "application_system_test_case"
 
 class BlancesTest < ApplicationSystemTestCase
+  include BlancesHelper
+
   setup do
     @blance = blances(:one)
   end
@@ -10,7 +12,7 @@ class BlancesTest < ApplicationSystemTestCase
 
     Blance.find_each do |blance|
       assert_text I18n.t("blances.blance.date", date: I18n.l(blance.date))
-      blance.result.positive? ? assert_text("+#{blance.result}") : assert_text(blance.result)
+      assert_blance_result blance.result
       assert_text blance.total_investment_money
       assert_text blance.total_recovery_money
       assert_text blance.store || ""
@@ -37,6 +39,18 @@ class BlancesTest < ApplicationSystemTestCase
       when "date"
         assert_selector "th", text: Blance.human_attribute_name(k)
         assert_selector "td", text: I18n.l(v)
+      when "investment_money", "recovery_money"
+        assert_selector "th", text: Blance.human_attribute_name(k)
+        assert_selector "td", text: display_money(v)
+      when "investment_saving", "recovery_saving"
+        assert_selector "th", text: Blance.human_attribute_name(k)
+        assert_selector "td", text: show_display_saving(v, @blance.rate)
+        when "rate"
+        assert_selector "th", text: Blance.human_attribute_name(k)
+        assert_selector "td", text: show_display_rate(v)
+      when "result"
+        assert_selector "th", text: Blance.human_attribute_name(k)
+        assert_blance_result v
       when "created_at", "updated_at"
         assert_text I18n.l(v, format: :long)
       else
@@ -49,10 +63,10 @@ class BlancesTest < ApplicationSystemTestCase
     assert_text I18n.t("blances.show.machine")
     assert_text I18n.t("blances.show.store")
     assert_text I18n.t("blances.show.etc")
+    assert_text I18n.t("blances.show.result")
     assert_link I18n.t("blances.show.edit"), href: edit_blance_path(@blance)
     assert_link I18n.t("blances.show.delete"), href: blance_path(@blance)
     assert_link I18n.t("blances.show.history"), href: blance_histories_path(@blance)
-    assert_link I18n.t("defaults.back"), href: blances_path
   end
 
   test "creating a Blance" do
@@ -102,5 +116,15 @@ class BlancesTest < ApplicationSystemTestCase
     page.driver.browser.switch_to.alert.accept
     assert_selector "div#flash_notice", text: I18n.t("blances.destroy.notice")
     assert_no_text @blance.name
+  end
+
+  def assert_blance_result(result)
+    if result.zero?
+      assert_selector "div.result.zero", text: display_money(result)
+    elsif result.positive?
+      assert_selector "div.result.plus", text: display_money(result)
+    else
+      assert_selector "div.result.minus", text: display_money(result)
+    end
   end
 end

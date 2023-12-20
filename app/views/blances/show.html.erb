@@ -2,7 +2,7 @@
 
 <% content_for(:title, t(".title", date: l(@blance.date))) %>
 
-<div class="blances__show">
+<div class="blances__show" data-controller="blances">
   <table>
     <tr>
       <th colspan="2" class="headline">
@@ -20,27 +20,23 @@
     </tr>
     <tr>
       <th><%= Blance.human_attribute_name(:investment_money) %></th>
-      <td><%= @blance.investment_money || 0 %></td>
+      <td><%= display_money(@blance.investment_money) %></td>
     </tr>
     <tr>
       <th><%= Blance.human_attribute_name(:recovery_money) %></th>
-      <td><%= @blance.recovery_money || 0 %></td>
+      <td><%= display_money(@blance.recovery_money) %></td>
     </tr>
     <tr>
       <th><%= Blance.human_attribute_name(:investment_saving) %></th>
-      <td><%= @blance.investment_saving || 0 %></td>
+      <td><%= show_display_saving(@blance.investment_saving, @blance.rate) %></td>
     </tr>
     <tr>
       <th><%= Blance.human_attribute_name(:recovery_saving) %></th>
-      <td><%= @blance.recovery_saving || 0 %></td>
+      <td><%= show_display_saving(@blance.recovery_saving, @blance.rate) %></td>
     </tr>
     <tr>
       <th><%= Blance.human_attribute_name(:rate) %></th>
-      <td><%= @blance.rate || 0 %></td>
-    </tr>
-    <tr>
-      <th><%= Blance.human_attribute_name(:result) %></th>
-      <td><%= @blance.result %></td>
+      <td><%= show_display_rate(@blance.rate) %></td>
     </tr>
     <tr>
       <th colspan="2" class="headline">
@@ -73,6 +69,15 @@
       <th><%= Blance.human_attribute_name(:note) %></th>
       <td><%= @blance.note %></td>
     </tr>
+    <tr>
+      <th colspan="2" class="headline">
+        <%= icon("fa-solid", "square-poll-vertical", t(".result")) %>
+      </th>
+    </tr>
+    <tr>
+      <th><%= Blance.human_attribute_name(:result) %></th>
+      <td data-blances-target="result"><%= display_money(@blance.result) %></td>
+    </tr>
   </table>
   <div class="datetimes">
     <ul>
@@ -82,17 +87,14 @@
   </div>
   <div class="links">
     <ul>
-      <%= link_to edit_blance_path(@blance), class: "edit" do %>
-        <%= icon("fa-regular", "edit", t(".edit")) %>
+      <%= link_to edit_blance_path(@blance) do %>
+        <%= icon("fa-regular", "edit", t(".edit_blance")) %>
       <% end %>
-      <%= link_to @blance, data: { turbo_method: :delete, turbo_confirm: t(".confirm") }, class: "delete" do %>
-        <%= icon("fa-regular", "trash-alt", t(".delete")) %>
+      <%= link_to blance_histories_path(@blance) do %>
+        <%= icon("fa-solid", "book", t(".show_history")) %>
       <% end %>
-      <%= link_to blance_histories_path(@blance), class: "history" do %>
-        <%= icon("fa-solid", "book", t(".history")) %>
-      <% end %>
-      <%= link_to blances_path, class: "back" do %>
-        <%= icon("fa-solid", "arrow-left", t("defaults.back")) %>
+      <%= link_to @blance, data: { turbo_method: :delete, turbo_confirm: t(".confirm") } do %>
+        <%= icon("fa-regular", "trash-alt", t(".delete_blance")) %>
       <% end %>
     </ul>
   </div>
