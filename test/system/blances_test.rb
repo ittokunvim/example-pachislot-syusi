@@ -64,9 +64,9 @@ class BlancesTest < ApplicationSystemTestCase
     assert_text I18n.t("blances.show.store")
     assert_text I18n.t("blances.show.etc")
     assert_text I18n.t("blances.show.result")
-    assert_link I18n.t("blances.show.edit"), href: edit_blance_path(@blance)
-    assert_link I18n.t("blances.show.delete"), href: blance_path(@blance)
-    assert_link I18n.t("blances.show.history"), href: blance_histories_path(@blance)
+    assert_link I18n.t("blances.show.edit_blance"), href: edit_blance_path(@blance)
+    assert_link I18n.t("blances.show.show_history"), href: blance_histories_path(@blance)
+    assert_link I18n.t("blances.show.delete_blance"), href: blance_path(@blance)
   end
 
   test "creating a Blance" do
@@ -111,7 +111,7 @@ class BlancesTest < ApplicationSystemTestCase
   test "destroying a Blance" do
     visit blance_url(@blance)
 
-    click_on I18n.t("blances.show.delete")
+    click_on I18n.t("blances.show.delete_blance")
     assert_match page.driver.browser.switch_to.alert.text, I18n.t("blances.show.confirm")
     page.driver.browser.switch_to.alert.accept
     assert_selector "div#flash_notice", text: I18n.t("blances.destroy.notice")
