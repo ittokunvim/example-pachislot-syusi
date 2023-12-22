@@ -101,8 +101,7 @@
 </div>
 
 <script>
-  const results = document.querySelectorAll("#result");
-  results.forEach((result) => {
+  document.querySelectorAll("#result").forEach((result) => {
     const resultTextLength = result.textContent.replaceAll(/\+/g, "").length;
     const resultText = result.textContent.replaceAll(/,|円/g, "");
     const resultNum = Number(resultText);
