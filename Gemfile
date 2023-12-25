@@ -54,6 +54,10 @@ gem "rails-i18n"
 # Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.
 gem "font-awesome-sass"
 
+# Official AWS Ruby gem for Amazon Simple Storage Service (Amazon S3).
+# This gem is part of the AWS SDK for Ruby.
+gem "aws-sdk-s3", require: false
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
