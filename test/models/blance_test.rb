@@ -129,6 +129,18 @@ class BlanceTest < ActiveSupport::TestCase
     assert @blance.images.attached?
   end
 
+  test "associated images with different extensions should not be attached" do
+    assert_not @blance.images.attach(file_fixtures("video.mp4"))
+    @blance.reload
+    assert_not @blance.images.attached?
+  end
+
+  test "associated images that are too large should not be attached" do
+    @blance.images.attach(file_fixtures("16MB.png"))
+    @blance.reload
+    assert_not @blance.images.attached?
+  end
+
   test "result() should be correct (rate: 4.0)" do
     blance = Blance.new(
       investment_money: 24_000,

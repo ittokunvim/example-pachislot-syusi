@@ -9,6 +9,7 @@ class Blance < ApplicationRecord
   validates :date, presence: true
   validates :category, length: { maximum: 100 }
   validates :rate, numericality: { less_than: 2**10, allow_nil: true }
+  validates :images, content_type: [:png, :jpg, :jpeg], size: { less_than: 16.megabytes }
 
   # validates :name, :store, :note
   with_options length: { maximum: 1000 } do

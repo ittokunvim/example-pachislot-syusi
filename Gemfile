@@ -58,6 +58,9 @@ gem "font-awesome-sass"
 # This gem is part of the AWS SDK for Ruby.
 gem "aws-sdk-s3", require: false
 
+# Active Storage validators [https://github.com/igorkasyanchuk/active_storage_validations]
+gem "active_storage_validations"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
