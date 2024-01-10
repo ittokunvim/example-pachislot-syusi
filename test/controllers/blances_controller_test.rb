@@ -4,7 +4,7 @@ class BlancesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @blance = blances(:one)
     @blance_hash = @blance.attributes
-    @blance_hash["date"] = @blance.date + 1.year
+    @blance_hash["date"] = @blance.date + 100.years
     @blance_hash.delete("id")
     @blance_hash.delete("created_at")
     @blance_hash.delete("updated_at")
