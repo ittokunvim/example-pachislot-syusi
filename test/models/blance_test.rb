@@ -112,6 +112,23 @@ class BlanceTest < ActiveSupport::TestCase
     end
   end
 
+  test "associated images should be valid" do
+    assert @blance.images
+  end
+
+  test "associated images should be destroyed" do
+    @blance.images.attach(file_fixtures("300x300.png"))
+    assert_difference "ActiveStorage::Attachment.count", -1 do
+      @blance.destroy
+    end
+  end
+
+  test "associated images should be attached" do
+    @blance.images.attach(file_fixtures("300x300.png"))
+    @blance.reload
+    assert @blance.images.attached?
+  end
+
   test "result() should be correct (rate: 4.0)" do
     blance = Blance.new(
       investment_money: 24_000,
@@ -200,5 +217,10 @@ class BlanceTest < ActiveSupport::TestCase
   test "sort_histories() put the value at the bottom when history_order does not contain the value" do
     @blance.history_order.order.sub!(",1", "")
     assert_equal 1, @blance.sort_histories.last.id
+  end
+
+  def file_fixtures(filename)
+    path = Rails.root.join("test/fixtures/files/#{filename}")
+    { io: File.open(path), filename: filename }
   end
 end

@@ -2,6 +2,8 @@ class Blance < ApplicationRecord
   has_one :history_order, dependent: :destroy
   has_many :histories, dependent: :destroy
 
+  has_many_attached :images
+
   default_scope -> { order(date: :desc) }
 
   validates :date, presence: true
