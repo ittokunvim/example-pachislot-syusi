@@ -233,6 +233,6 @@ class BlanceTest < ActiveSupport::TestCase
 
   def file_fixtures(filename)
     path = Rails.root.join("test/fixtures/files/#{filename}")
-    { io: File.open(path), filename: filename }
+    { io: File.open(path), filename: }
   end
 end

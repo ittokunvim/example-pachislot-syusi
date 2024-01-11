@@ -2,14 +2,14 @@ module BlancesHelper
   def display_money(money)
     return "0円" if money.nil?
 
-    ActionController::Base.helpers.number_to_currency(money, unit: "円", precision: 0)
+    ActionController::Base.helpers.number_to_currency(money, unit: '円', precision: 0)
   end
 
   def show_display_saving(saving, rate)
     return "0玉/枚 (0円)" if saving.nil?
     return "#{saving}玉/枚 (0円)" if rate.nil?
 
-    "#{saving}玉/枚 (#{ActionController::Base.helpers.number_to_currency(saving * rate, unit: "円", precision: 0)})"
+    "#{saving}玉/枚 (#{ActionController::Base.helpers.number_to_currency(saving * rate, unit: '円', precision: 0)})"
   end
 
   def show_display_rate(rate)

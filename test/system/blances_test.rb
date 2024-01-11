@@ -45,7 +45,7 @@ class BlancesTest < ApplicationSystemTestCase
       when "investment_saving", "recovery_saving"
         assert_selector "th", text: Blance.human_attribute_name(k)
         assert_selector "td", text: show_display_saving(v, @blance.rate)
-        when "rate"
+      when "rate"
         assert_selector "th", text: Blance.human_attribute_name(k)
         assert_selector "td", text: show_display_rate(v)
       when "result"
