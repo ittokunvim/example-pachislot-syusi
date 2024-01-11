@@ -117,14 +117,14 @@ class BlanceTest < ActiveSupport::TestCase
   end
 
   test "associated images should be destroyed" do
-    @blance.images.attach(file_fixtures("300x300.png"))
+    @blance.images.attach(file_fixtures("image.png"))
     assert_difference "ActiveStorage::Attachment.count", -1 do
       @blance.destroy
     end
   end
 
   test "associated images should be attached" do
-    @blance.images.attach(file_fixtures("300x300.png"))
+    @blance.images.attach(file_fixtures("image.png"))
     @blance.reload
     assert @blance.images.attached?
   end

@@ -38,7 +38,7 @@ blance.create_history_order!
 puts "HistoryOrder count: #{HistoryOrder.count}"
 
 blance.images.attach(
-  io: File.open(Rails.root.join("test/fixtures/files/300x300.png")),
+  io: File.open(Rails.root.join("test/fixtures/files/image.png")),
   filename: "blance.png"
 )
 puts "blance images count: #{blance.images.count}"

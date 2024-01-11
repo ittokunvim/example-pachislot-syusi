@@ -17,6 +17,7 @@ class BlancesController < ApplicationController
 
   def create
     @blance = Blance.new(blance_params)
+    @blance.images.attach(params[:blance][:images])
     if @blance.save
       redirect_to @blance, notice: t(".notice")
     else
@@ -26,6 +27,7 @@ class BlancesController < ApplicationController
 
   def update
     @blance = Blance.find(params[:id])
+    @blance.images.attach(params[:blance][:images])
     if @blance.update(blance_params)
       redirect_to @blance, notice: t(".notice")
     else
@@ -52,7 +54,8 @@ class BlancesController < ApplicationController
       :recovery_saving,
       :rate,
       :store,
-      :note
+      :note,
+      images: []
     )
   end
 end
