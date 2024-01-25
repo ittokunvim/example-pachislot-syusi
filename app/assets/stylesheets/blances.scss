@@ -55,6 +55,11 @@
       &.minus {
         color: $color-text-alert;
       }
+      &.images {
+        img {
+          max-width: 256px;
+        }
+      }
       &:last-child {
         word-wrap: break-word;
         white-space: pre-wrap;

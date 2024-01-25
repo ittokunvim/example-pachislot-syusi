@@ -5,6 +5,10 @@ class BlancesTest < ApplicationSystemTestCase
 
   setup do
     @blance = blances(:one)
+    @blance.images.attach(
+      io: File.open(Rails.root.join("test/fixtures/files/image.png")),
+      filename: "image.png"
+    )
   end
 
   test "visiting the index" do
@@ -58,6 +62,10 @@ class BlancesTest < ApplicationSystemTestCase
         assert_selector "td", text: v
       end
     end
+    @blance.images_blobs.each do |blob|
+      assert_selector "img[src$='#{blob.filename}']"
+    end
+    assert_text I18n.t("blances.show.image")
     assert_text I18n.t("blances.show.date")
     assert_text I18n.t("blances.show.blance")
     assert_text I18n.t("blances.show.machine")

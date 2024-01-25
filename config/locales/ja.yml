@@ -32,6 +32,7 @@ ja:
       machine: "機種"
       store: "店舗"
       etc: "その他"
+      image: "画像"
       result: "結果"
       edit_blance: "収支を編集する"
       show_history: "遊技履歴を見る"
