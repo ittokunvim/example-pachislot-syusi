@@ -17,20 +17,20 @@ class BlancesController < ApplicationController
 
   def create
     @blance = Blance.new(blance_params)
-    @blance.images.attach(params[:blance][:images])
     if @blance.save
       redirect_to @blance, notice: t(".notice")
     else
+      @blance.images = nil
       render("new", status: :bad_request)
     end
   end
 
   def update
     @blance = Blance.find(params[:id])
-    @blance.images.attach(params[:blance][:images])
     if @blance.update(blance_params)
       redirect_to @blance, notice: t(".notice")
     else
+      @blance.reload
       render("edit", status: :bad_request)
     end
   end

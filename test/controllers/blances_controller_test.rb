@@ -51,15 +51,17 @@ class BlancesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should post create with images" do
-    @blance_hash["images"] = fixture_file_upload("image.png", "image/png")
+    @blance_hash["images"] = ["", fixture_file_upload("image.png", "image/png")]
     assert_difference("Blance.count", 1) do
       post blances_url, params: { blance: @blance_hash }
     end
-    assert_redirected_to blance_url Blance.first
+    blance = Blance.first
+    assert_redirected_to blance_url blance
+    assert blance.images.attached?
   end
 
   test "should return bad_request when post create with images" do
-    @blance_hash["images"] = fixture_file_upload("video.mp4", "video/mp4")
+    @blance_hash["images"] = ["", fixture_file_upload("video.mp4", "video/mp4")]
     assert_no_difference("Blance.count") do
       post blances_url, params: { blance: @blance_hash }
     end
@@ -83,6 +85,24 @@ class BlancesControllerTest < ActionDispatch::IntegrationTest
     end
     assert_response :bad_request
   end
+
+  # test "should patch update with images" do
+  #   @blance_hash["images"] = ["", fixture_file_upload("image.png", "image/png")]
+  #   assert_changes -> { @blance.name } do
+  #     patch blance_url @blance, params: { blance: @blance_hash }
+  #     @blance.reload
+  #   end
+  #   assert_redirected_to blance_url @blance
+  # end
+
+  # test "should return bad_request when patch update with images" do
+  #   @blance_hash["images"] = ["", fixture_file_upload("video.mp4", "video/mp4")]
+  #   assert_no_changes -> { @blance.images.attached? } do
+  #     patch blance_url @blance, params: { blance: @blance_hash }
+  #     @blance.reload
+  #   end
+  #   assert_response :bad_request
+  # end
 
   test "should delete destroy" do
     assert_difference("Blance.count", -1) do
