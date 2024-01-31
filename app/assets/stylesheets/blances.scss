@@ -236,6 +236,11 @@
         }
       }
     }
+    .images {
+      img {
+        max-width: 256px;
+      }
+    }
 
     input[type="submit"] {
       cursor: pointer;

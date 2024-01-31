@@ -99,6 +99,7 @@ ja:
         store: "店舗名"
         note: "備考"
         result: "収支額"
+        images: "画像"
       history:
         game_count: "ゲーム数"
         chance: "契機"

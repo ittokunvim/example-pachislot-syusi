@@ -84,6 +84,11 @@ class BlancesTest < ApplicationSystemTestCase
     # invalid input
     click_on I18n.t("blances.new.button_text")
     assert_selector "div#error_explanation"
+    # invalid input with images
+    fill_in I18n.t("activerecord.attributes.blance.date"), with: @blance.date
+    attach_file I18n.t("activerecord.attributes.blance.images"), Rails.root.join("test/fixtures/files/video.mp4")
+    click_on I18n.t("blances.new.button_text")
+    assert_selector "div#error_explanation"
     # valid input
     fill_in I18n.t("activerecord.attributes.blance.date"), with: @blance.date
     select @blance.category, from: I18n.t("activerecord.attributes.blance.category")
@@ -96,6 +101,7 @@ class BlancesTest < ApplicationSystemTestCase
     select @blance.rate.to_s, from: I18n.t("activerecord.attributes.blance.rate")
     fill_in I18n.t("activerecord.attributes.blance.store"), with: @blance.store
     fill_in I18n.t("activerecord.attributes.blance.note"), with: @blance.note
+    attach_file I18n.t("activerecord.attributes.blance.images"), Rails.root.join("test/fixtures/files/image.png")
     click_on I18n.t("blances.new.button_text")
     # check redirect
     assert_selector "div#flash_notice", text: I18n.t("blances.create.notice")
@@ -107,6 +113,11 @@ class BlancesTest < ApplicationSystemTestCase
 
     # invalid input
     fill_in I18n.t("activerecord.attributes.blance.date"), with: ""
+    click_on I18n.t("blances.edit.button_text")
+    assert_selector "div#error_explanation"
+    # invalid input with images
+    fill_in I18n.t("activerecord.attributes.blance.date"), with: Time.zone.today
+    attach_file I18n.t("activerecord.attributes.blance.images"), Rails.root.join("test/fixtures/files/video.mp4")
     click_on I18n.t("blances.edit.button_text")
     assert_selector "div#error_explanation"
     # valid input
