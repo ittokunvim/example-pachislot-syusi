@@ -49,20 +49,28 @@
       width: 70%;
       text-align: left;
       background-color: $color-background-primary;
+      &.note {
+        word-wrap: break-word;
+        white-space: pre-wrap;
+      }
+      &.images {
+        text-align: center;
+        div {
+          padding: 0.5em;
+        }
+        img {
+          width: 256px;
+          height: 256px;
+          object-fit: cover;
+          border: 2px solid $color-border-image;
+          border-radius: 1em;
+        }
+      }
       &.plus {
         color: $color-text-success;
       }
       &.minus {
         color: $color-text-alert;
-      }
-      &.images {
-        img {
-          max-width: 256px;
-        }
-      }
-      &:last-child {
-        word-wrap: break-word;
-        white-space: pre-wrap;
       }
     }
   }
