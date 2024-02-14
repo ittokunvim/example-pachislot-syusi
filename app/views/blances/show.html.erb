@@ -69,18 +69,20 @@
       <th><%= Blance.human_attribute_name(:note) %></th>
       <td class="note"><%= @blance.note %></td>
     </tr>
-    <tr>
-      <th colspan="2" class="headline">
-        <%= icon("fa-solid", "image", t(".image")) %>
-      </th>
-    </tr>
-    <tr>
-      <td colspan="2" class="images">
-        <% @blance.images.each do |image| %>
-          <div class="image"><%= image_tag image.variant(resize_to_limit: [1024, 1024]) %></div>
-        <% end %>
-      </td>
-    </tr>
+    <% if @blance.images.attached? %>
+      <tr>
+        <th colspan="2" class="headline">
+          <%= icon("fa-solid", "image", t(".image")) %>
+        </th>
+      </tr>
+      <tr>
+        <td colspan="2" class="images">
+          <% @blance.images.each do |image| %>
+            <div class="image"><%= image_tag image.variant(resize_to_limit: [1024, 1024]) %></div>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
     <tr>
       <th colspan="2" class="headline">
         <%= icon("fa-solid", "square-poll-vertical", t(".result")) %>

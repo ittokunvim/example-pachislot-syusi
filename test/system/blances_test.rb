@@ -34,6 +34,10 @@ class BlancesTest < ApplicationSystemTestCase
   end
 
   test "visiting the show" do
+    # If there is no image in the blances, it will not be displayed.
+    visit blance_url(blances(:two))
+    assert_no_text I18n.t("blances.show.image")
+
     visit blance_url(@blance)
 
     @blance.attributes.each do |k, v|
