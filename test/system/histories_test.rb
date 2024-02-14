@@ -16,6 +16,7 @@ class HistoriesTest < ApplicationSystemTestCase
     @histories.each do |history|
       history.attributes.each do |k, v|
         next if excepted_columns.include?(k)
+
         assert_selector "th", text: History.human_attribute_name(k)
         assert_selector "td", text: v
       end

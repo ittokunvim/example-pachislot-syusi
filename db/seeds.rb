@@ -37,6 +37,12 @@ puts "Blance count: #{Blance.count}"
 blance.create_history_order!
 puts "HistoryOrder count: #{HistoryOrder.count}"
 
+blance.images.attach(
+  io: File.open(Rails.root.join("test/fixtures/files/image.png")),
+  filename: "blance.png"
+)
+puts "blance images count: #{blance.images.count}"
+
 history1 = blance.histories.create!(
   game_count: 3,
   chance: "BB",

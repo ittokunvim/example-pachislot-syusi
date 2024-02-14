@@ -5,6 +5,10 @@ class BlancesTest < ApplicationSystemTestCase
 
   setup do
     @blance = blances(:one)
+    @blance.images.attach(
+      io: File.open(Rails.root.join("test/fixtures/files/image.png")),
+      filename: "image.png"
+    )
   end
 
   test "visiting the index" do
@@ -30,6 +34,10 @@ class BlancesTest < ApplicationSystemTestCase
   end
 
   test "visiting the show" do
+    # If there is no image in the blances, it will not be displayed.
+    visit blance_url(blances(:two))
+    assert_no_text I18n.t("blances.show.image")
+
     visit blance_url(@blance)
 
     @blance.attributes.each do |k, v|
@@ -45,7 +53,7 @@ class BlancesTest < ApplicationSystemTestCase
       when "investment_saving", "recovery_saving"
         assert_selector "th", text: Blance.human_attribute_name(k)
         assert_selector "td", text: show_display_saving(v, @blance.rate)
-        when "rate"
+      when "rate"
         assert_selector "th", text: Blance.human_attribute_name(k)
         assert_selector "td", text: show_display_rate(v)
       when "result"
@@ -58,6 +66,10 @@ class BlancesTest < ApplicationSystemTestCase
         assert_selector "td", text: v
       end
     end
+    @blance.images_blobs.each do |blob|
+      assert_selector "img[src$='#{blob.filename}']"
+    end
+    assert_text I18n.t("blances.show.image")
     assert_text I18n.t("blances.show.date")
     assert_text I18n.t("blances.show.blance")
     assert_text I18n.t("blances.show.machine")
@@ -76,6 +88,11 @@ class BlancesTest < ApplicationSystemTestCase
     # invalid input
     click_on I18n.t("blances.new.button_text")
     assert_selector "div#error_explanation"
+    # invalid input with images
+    fill_in I18n.t("activerecord.attributes.blance.date"), with: @blance.date
+    attach_file I18n.t("activerecord.attributes.blance.images"), Rails.root.join("test/fixtures/files/video.mp4")
+    click_on I18n.t("blances.new.button_text")
+    assert_selector "div#error_explanation"
     # valid input
     fill_in I18n.t("activerecord.attributes.blance.date"), with: @blance.date
     select @blance.category, from: I18n.t("activerecord.attributes.blance.category")
@@ -88,6 +105,7 @@ class BlancesTest < ApplicationSystemTestCase
     select @blance.rate.to_s, from: I18n.t("activerecord.attributes.blance.rate")
     fill_in I18n.t("activerecord.attributes.blance.store"), with: @blance.store
     fill_in I18n.t("activerecord.attributes.blance.note"), with: @blance.note
+    attach_file I18n.t("activerecord.attributes.blance.images"), Rails.root.join("test/fixtures/files/image.png")
     click_on I18n.t("blances.new.button_text")
     # check redirect
     assert_selector "div#flash_notice", text: I18n.t("blances.create.notice")
@@ -99,6 +117,11 @@ class BlancesTest < ApplicationSystemTestCase
 
     # invalid input
     fill_in I18n.t("activerecord.attributes.blance.date"), with: ""
+    click_on I18n.t("blances.edit.button_text")
+    assert_selector "div#error_explanation"
+    # invalid input with images
+    fill_in I18n.t("activerecord.attributes.blance.date"), with: Time.zone.today
+    attach_file I18n.t("activerecord.attributes.blance.images"), Rails.root.join("test/fixtures/files/video.mp4")
     click_on I18n.t("blances.edit.button_text")
     assert_selector "div#error_explanation"
     # valid input

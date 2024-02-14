@@ -44,6 +44,19 @@
       <%= f.label :note %>
       <%= f.text_area :note %>
     </div>
+    <div class="form_group">
+      <%= f.label :images %>
+      <%= f.file_field :images, multiple: true %>
+    </div>
+    <div class="images">
+      <% @blance.images.each do |image| %>
+        <div class="image" data-controller="blances" data-target="blances.image">
+          <%= f.hidden_field :images, multiple: true, value: image.signed_id %>
+          <i class="fa-solid fa-xmark" data-action="click->blances#delete"></i>
+          <%= image_tag image.variant(resize_to_limit: [1024, 1024]) %>
+        </div>
+      <% end %>
+    </div>
     <%= f.submit yield(:button_text) %>
   <% end %>
 </div>

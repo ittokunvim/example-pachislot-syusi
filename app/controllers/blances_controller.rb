@@ -20,6 +20,7 @@ class BlancesController < ApplicationController
     if @blance.save
       redirect_to @blance, notice: t(".notice")
     else
+      @blance.images = nil
       render("new", status: :bad_request)
     end
   end
@@ -29,6 +30,7 @@ class BlancesController < ApplicationController
     if @blance.update(blance_params)
       redirect_to @blance, notice: t(".notice")
     else
+      @blance.reload
       render("edit", status: :bad_request)
     end
   end
@@ -52,7 +54,8 @@ class BlancesController < ApplicationController
       :recovery_saving,
       :rate,
       :store,
-      :note
+      :note,
+      images: []
     )
   end
 end
