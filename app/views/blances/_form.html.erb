@@ -52,8 +52,8 @@
       <% @blance.images.each do |image| %>
         <div class="image" data-controller="blances" data-target="blances.image">
           <%= f.hidden_field :images, multiple: true, value: image.signed_id %>
-          <%= image_tag image.variant(resize_to_limit: [1024, 1024]) %>
           <i class="fa-solid fa-xmark" data-action="click->blances#delete"></i>
+          <%= image_tag image.variant(resize_to_limit: [1024, 1024]) %>
         </div>
       <% end %>
     </div>

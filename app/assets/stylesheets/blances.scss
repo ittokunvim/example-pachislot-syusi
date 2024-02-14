@@ -200,22 +200,21 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 1rem;
-
   form {
     padding: 1em;
     border: 1px solid $color-border-primary;
     border-radius: 0.5em;
-
+    .form_group,
+    .images {
+      margin-bottom: 1em;
+    }
     .form_group {
       display: flex;
       flex-direction: column;
       gap: 0.2em;
-      margin-bottom: 1em;
-
       label {
         font-size: 0.8rem;
       }
-
       input,
       select,
       textarea {
@@ -230,12 +229,13 @@
         background-color: $color-background-input;
         color: $color-text-primary;
       }
-
       textarea {
         width: 100%;
         height: 12em;
       }
-
+      input[type="file"] {
+        font-size: 0.9rem;
+      }
       .field_with_errors {
         input,
         select,
@@ -245,14 +245,38 @@
       }
     }
     .images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 128px);
+      justify-content: center;
+      grid-gap: 0.5em;
+      .image {
+        position: relative;
+        width: 128px;
+        height: 128px;
+      }
       img {
-        max-width: 256px;
+        width: 128px;
+        height: 128px;
+        object-fit: cover;
+        border: 1px solid $color-border-image;
+        border-radius: 1em;
+      }
+      i[class^="fa-"] {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        cursor: pointer;
+        font-size: 0.6em;
+        color: $color-text-light;
+        background: rgba($color-background-dark, 0.8);
+        padding: 0.5em;
+        border-radius: 1em;
+        z-index: 100;
       }
     }
-
     input[type="submit"] {
       cursor: pointer;
-      font-size: 0.8rem;
+      font-size: 1rem;
       font-weight: bold;
       padding: 0.5em 1em;
       border: 1px solid black;
@@ -260,13 +284,27 @@
       background-color: $color-button-success;
       color: white;
     }
-
     @media screen and (min-width: 600px) {
       .form_group input,
       input[type="submit"],
       .form_group select,
       .form_group textarea {
         font-size: 0.8rem;
+      }
+      .images {
+        grid-template-columns: repeat(auto-fit, 180px);
+        .image {
+          width: 180px;
+          height: 180px;
+        }
+        img {
+          width: 180px;
+          height: 180px;
+          border-width: 2px;
+        }
+        i[class^="fa-"] {
+          font-size: 0.8em;
+        }
       }
     }
   }
