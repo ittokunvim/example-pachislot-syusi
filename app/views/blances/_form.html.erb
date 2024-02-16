@@ -11,10 +11,9 @@
       <%= f.select :category, ["パチンコ", "スロット"], { include_blank: true } %>
     </div>
     <div class="form_group">
-      <%= f.label :name %>
-      <%= f.text_field :name, list: "names" %>
-      <datalist id="names">
-      </datalist>
+      <%= f.label :machine_name %>
+      <%= f.text_field :machine_name, list: "machine_names" %>
+      <datalist id="machine_names"></datalist>
     </div>
     <div class="form_group">
       <%= f.label :investment_money %>
@@ -92,9 +91,9 @@
     "ハナハナホウオウ～天翔～",
     "パチスロディスクアップ2",
     "バーサスリヴァイズ",
-  ].forEach(name => {
+  ].forEach(machine_name => {
     const option = document.createElement("option");
-    option.value = name;
-    document.getElementById("names").appendChild(option);
+    option.value = machine_name;
+    document.getElementById("machine_names").appendChild(option);
   });
 </script>

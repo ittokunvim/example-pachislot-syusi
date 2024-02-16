@@ -7,7 +7,7 @@
 one:
  date: <%= Date.parse("2023-01-01") %>
  category: スロット
- name: パチスロ甲鉄城のカバネリ
+ machine_name: パチスロ甲鉄城のカバネリ
  investment_money: 10000
  recovery_money: 12000
  investment_saving: 460
@@ -19,7 +19,7 @@ one:
 two:
  date: <%= Date.parse("2023-06-06") %>
  category: パチンコ
- name: 新世紀エヴァンゲリオン〜未来への咆哮
+ machine_name: 新世紀エヴァンゲリオン〜未来への咆哮
  investment_money: 25000
  recovery_money: 10000
  investment_saving: 2000

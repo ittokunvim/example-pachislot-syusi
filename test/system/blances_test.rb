@@ -20,7 +20,7 @@ class BlancesTest < ApplicationSystemTestCase
       assert_text blance.total_investment_money
       assert_text blance.total_recovery_money
       assert_text blance.store || ""
-      assert_text blance.name || ""
+      assert_text blance.machine_name || ""
       assert_link I18n.t("blances.blance.show"), href: blance_path(blance)
       assert_link I18n.t("blances.blance.edit"), href: edit_blance_path(blance)
       assert_link I18n.t("blances.blance.destroy"), href: blance_path(blance)
@@ -28,7 +28,7 @@ class BlancesTest < ApplicationSystemTestCase
     end
     assert_text I18n.t("blances.blance.investment")
     assert_text I18n.t("blances.blance.recovery")
-    assert_text I18n.t("blances.blance.name")
+    assert_text I18n.t("blances.blance.machine_name")
     assert_text I18n.t("blances.blance.store")
     assert_link I18n.t("blances.index.new_blance"), href: new_blance_path
   end
@@ -82,7 +82,7 @@ class BlancesTest < ApplicationSystemTestCase
   end
 
   test "creating a Blance" do
-    blance_name = "test_blance"
+    blance_machine_name = "test_blance"
     visit new_blance_url
 
     # invalid input
@@ -96,7 +96,7 @@ class BlancesTest < ApplicationSystemTestCase
     # valid input
     fill_in I18n.t("activerecord.attributes.blance.date"), with: @blance.date
     select @blance.category, from: I18n.t("activerecord.attributes.blance.category")
-    fill_in I18n.t("activerecord.attributes.blance.name"), with: blance_name
+    fill_in I18n.t("activerecord.attributes.blance.machine_name"), with: blance_machine_name
     assert_selector "option"
     fill_in I18n.t("activerecord.attributes.blance.investment_money"), with: @blance.investment_money
     fill_in I18n.t("activerecord.attributes.blance.recovery_money"), with: @blance.recovery_money
@@ -109,7 +109,7 @@ class BlancesTest < ApplicationSystemTestCase
     click_on I18n.t("blances.new.button_text")
     # check redirect
     assert_selector "div#flash_notice", text: I18n.t("blances.create.notice")
-    assert_text blance_name
+    assert_text blance_machine_name
   end
 
   test "updating a Blance" do
@@ -139,7 +139,7 @@ class BlancesTest < ApplicationSystemTestCase
     assert_match page.driver.browser.switch_to.alert.text, I18n.t("blances.show.confirm")
     page.driver.browser.switch_to.alert.accept
     assert_selector "div#flash_notice", text: I18n.t("blances.destroy.notice")
-    assert_no_text @blance.name
+    assert_no_text @blance.machine_name
   end
 
   def assert_blance_result(result)
