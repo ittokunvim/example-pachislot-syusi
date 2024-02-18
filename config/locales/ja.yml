@@ -9,7 +9,7 @@ ja:
       result: ""
       investment: "投資合計"
       recovery: "回収合計"
-      name: "機種"
+      machine_name: "機種"
       store: "店舗"
       show: "閲覧する"
       edit: "編集する"
@@ -90,7 +90,7 @@ ja:
       blance:
         date: "日付"
         category: "種別"
-        name: "機種名"
+        machine_name: "機種名"
         investment_money: "現金投資"
         recovery_money: "現金回収"
         investment_saving: "引出数"

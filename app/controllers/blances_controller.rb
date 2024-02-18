@@ -47,7 +47,7 @@ class BlancesController < ApplicationController
     params.require(:blance).permit(
       :date,
       :category,
-      :name,
+      :machine_name,
       :investment_money,
       :recovery_money,
       :investment_saving,

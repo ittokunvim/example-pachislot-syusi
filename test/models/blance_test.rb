@@ -27,8 +27,8 @@ class BlanceTest < ActiveSupport::TestCase
     assert_not @blance.valid?
   end
 
-  test "name should not be too long" do
-    @blance.name = "a" * 1001
+  test "machine_name should not be too long" do
+    @blance.machine_name = "a" * 1001
     assert_not @blance.valid?
   end
 

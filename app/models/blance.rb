@@ -11,9 +11,9 @@ class Blance < ApplicationRecord
   validates :rate, numericality: { less_than: 2**10, allow_nil: true }
   validates :images, content_type: [:png, :jpg, :jpeg], size: { less_than: 16.megabytes }
 
-  # validates :name, :store, :note
+  # validates :machine_name, :store, :note
   with_options length: { maximum: 1000 } do
-    validates :name
+    validates :machine_name
     validates :store
     validates :note
   end

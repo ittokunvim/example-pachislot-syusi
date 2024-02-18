@@ -69,8 +69,8 @@ class BlancesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should patch update" do
-    @blance_hash["name"] = "test"
-    assert_changes -> { @blance.name } do
+    @blance_hash["machine_name"] = "test"
+    assert_changes -> { @blance.machine_name } do
       patch blance_url @blance, params: { blance: @blance_hash }
       @blance.reload
     end

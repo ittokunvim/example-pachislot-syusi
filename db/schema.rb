@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_25_173537) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_16_101057) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -45,7 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_25_173537) do
   create_table "blances", force: :cascade do |t|
     t.date "date", null: false
     t.string "category", limit: 100
-    t.string "name", limit: 1000
+    t.string "machine_name", limit: 1000
     t.integer "investment_money"
     t.integer "recovery_money"
     t.integer "investment_saving"
