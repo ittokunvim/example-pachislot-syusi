@@ -1,0 +1,51 @@
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+.errorpage {
+  text-align: center;
+}
+
+.errorpage .logo {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+}
+
+.errorpage .logo img {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  display: block;
+}
+
+.errorpage .headline h1 {
+  font-size: 4rem;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.errorpage .headline span {
+  color: #777777;
+  font-size: 1rem;
+  font-weight: thin;
+}
+
+.errorpage .link a {
+  display: block;
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+.errorpage .link a:hover {
+  text-decoration: underline;
+}
