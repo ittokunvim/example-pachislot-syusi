@@ -8,7 +8,7 @@ class BlancesControllerTest < ActionDispatch::IntegrationTest
     @blance_hash.delete("id")
     @blance_hash.delete("created_at")
     @blance_hash.delete("updated_at")
-    @page_title = "パチスロ収支アプリ | "
+    @page_title = "#{ConstantParameters::SITENAME} | "
   end
 
   test "should get index" do

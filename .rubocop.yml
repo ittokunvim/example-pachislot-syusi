@@ -65,6 +65,10 @@ Style/SymbolArray:
 # Style/WordArray:
 #   Enabled: false
 
+# 定数定義にfreezeメソッドのチェック
+Style/MutableConstant:
+  Enabled: false
+
 # # 変数名に数字を許可
 # Naming/VariableNumber:
 #   Enabled: false
