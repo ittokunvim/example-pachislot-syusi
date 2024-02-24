@@ -4,6 +4,6 @@ class HelloControllerTest < ActionDispatch::IntegrationTest
   test "should get hello" do
     get hello_url
     assert_response :success
-    assert_select "title", "パチスロ収支アプリ | やっはろー"
+    assert_select "title", "#{ConstantParameters::SITENAME} | やっはろー"
   end
 end

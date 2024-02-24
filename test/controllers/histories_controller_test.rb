@@ -9,7 +9,7 @@ class HistoriesControllerTest < ActionDispatch::IntegrationTest
     @history_hash.delete("blance_id")
     @history_hash.delete("created_at")
     @history_hash.delete("updated_at")
-    @page_title = "パチスロ収支アプリ | "
+    @page_title = "#{ConstantParameters::SITENAME} | "
   end
 
   test "should get index" do
