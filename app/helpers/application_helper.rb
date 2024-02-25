@@ -1,16 +1,12 @@
 module ApplicationHelper
-  def page_title(page_title = "")
-    base_title = ConstantParameters::SITENAME
-
-    page_title.empty? ? base_title : "#{base_title} | #{page_title}"
-  end
-
   def default_meta_tags
+    sitename = ConstantParameters::SITENAME
+
     {
-      site: "パチスロ収支アプリ",
+      site: sitename,
       title: "パチスロの収支を記録するサービス",
-      description: "パチスロ収支アプリを使えば、パチスロの収支を記録することができます。",
-      keywords: "パチスロ,パチンコ,スロット,収支",
+      description: "#{sitename}を使えば、パチスロの収支を記録することができます。",
+      keywords: "#{sitename},パチスロ,パチンコ,スロット,収支",
       charset: "utf-8",
       separator: "|",
       canonical: request.original_url,
