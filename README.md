@@ -1,34 +1,46 @@
-# Pachislot Syusi
+# Example Pachislot Syusi
 
-このリポジトリは、パチスロの収支を記録するアプリのソースコードを置く場所です。
+ここは、`Ruby On Rails`で作成されたパチスロの収支を記録するサイトを作成するアプリケーションです。
 
-サーバーを立ち上げるには、以下のコマンドを実行します。
+## 始める前に
+
+まずは始める前に以下のアプリケーションをインストールしておく必要があります。
+
+- [Docker](https://www.docker.com/)
+
+## 始める
+
+まずは`Docker`を用いてビルドを行います。
+
+```bash
+make build
+```
+
+次にサーバーを立ち上げます。
 
 ```bash
 make up
 ```
 
-Things you may want to cover:
+次にデータベースのセットアップを行います。
 
-Ruby version:
-- See `.ruby-version` file
+```bash
+make setup_db
+```
 
-System dependencies:
-- [Docker](https://www.docker.com/)
+これで準備は整いました！最後に[localhost:3000](http://localhost:3000)にアクセスしてみましょう。
 
-Configuration:
+## その他
 
-Database creation:
-- `docker compose run --rm web rails db:create`
+以下のリストはアプリ開発に便利なコマンドを用意しています。うまく使いこなしましょう！
 
-Database initialization:
-- `docker compose run --rm web rails db:reset`
-
-How to run the test suite:
-- `docker compose run --rm web rails test`
-
-Services (job queues, cache servers, search engines, etc.)
-
-Deployment instructions
-
-...
+```bash
+# webコンテナにアクセスする
+make web_init
+# dbコンテナにアクセスする
+make db_init
+# データベースの中身を空にする
+make db_reset
+# テストを実行
+make web_test
+```
